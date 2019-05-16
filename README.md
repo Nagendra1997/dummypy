@@ -14,7 +14,7 @@ This repo contains the source code for Mesibo Python API.
 ## Prerequisites
 Building Mesbio Python modules requires the following software installed:
 
-1.Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred) 
+**1.Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred) 
 
 On CentOS,Debian and derivatives (Ubuntu): python, python-dev (or python3-dev/python2-dev)
 
@@ -22,9 +22,9 @@ On Windows: the official python installer at www.python.org
 
 Make sure that the Python package distutils is installed before continuing. For example, in Debian GNU/Linux, installing python-dev also installs distutils.
 
-2.Compilers
+**2.Compiler
 
- C compiler.GCC 4.x (and later)are recommended. 
+ C/C++ compiler.GCC 4.x (and later)are recommended. 
 
 
 ## Basic Installation
