@@ -26,8 +26,15 @@ Make sure that the Python package distutils is installed before continuing. For 
 
 **3.Compiler**
 
- C/C++ compiler.GCC 4.x (and later)are recommended. 
+ C/C++ compiler.GCC 4.x (and later)are recommended.
  
+## Getting the files
+```
+$ mkdir MesiboPython
+$ cd MesiboPython
+$ git clone https://github.com/mesibo/************
+```
+Ensure the following file structure
 ```
 |-- include
 |-- setup.py
