@@ -1,4 +1,4 @@
-## Mesibo Python API
+## Mesibo Python Package
 Mesibo offers everything to make your app real-time and scalable for your first billion users and the next. It's modular, lightweight and easy to integrate.
 
 Mesibo supports almost all popular platforms and languages for you to quickly build your applications. Whether you are developing mobile apps (Android, iOS, Java, Objective-C, C++), web apps (Javascript), integrating with backend (Linux, MacOS, Windows, Python, C++) or creating cool devices using Raspberry PI, mesibo has APIs for you.
@@ -32,12 +32,12 @@ Make sure that the Python package distutils is installed before continuing. For 
 |-- include
 |-- setup.py
 |-- src
-`-- tests
+|-- tests
 
 ```
 
 ## Basic Installation
-To build and install Mesibo Python library
+To build and install Mesibo Python Package
 ```
 python setup.py install
 ```
