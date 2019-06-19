@@ -39,12 +39,18 @@ Make sure that the Python package distutils is installed before continuing. For 
 ## Basic Installation
 To build and install Mesibo Python Package
 ```
-python setup.py install
+python3 setup.py install
+```
+```
+sudo python2 setup.py install
 ```
 
 To perform an in-place build that can be run from the source folder run:
 ```
-python setup.py build_ext --inplace
+python3 setup.py build_ext --inplace
+```
+```
+python2 setup.py build_ext --inplace
 ```
 
 
