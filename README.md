@@ -146,7 +146,7 @@ from mesiboNotify.mesiboNotify import mesiboNotify
 ```
 
 Mesibo invokes various Listeners for various events.
-For example, when you receive a message, receive an incoming call etc
+For example, when you receive a message, receive an incoming call,etc.
 mesiboNotify is a class of listeners that can be invoked to get real-time notification of events  
 
 ```python
