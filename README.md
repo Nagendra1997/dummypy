@@ -285,8 +285,8 @@ def send_text_message(to,message):
 mesibo.set_accesstoken("cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw") 
 mesibo.set_database("mesibo.db")
 mesibo.set_notify(test_mesiboNotify) #your custom listener class
-mesibo.set_device(1, "MyUser", "MyAppName", "1.0.0") #
-mesibo.start()
+mesibo.set_device(1, "MyUser", "MyAppName", "1.0.0") 
+mesibo.start() #Start your mesibo instance!
 mesibo.wait() 
 ```
 **4. Run the script**
