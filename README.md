@@ -12,7 +12,7 @@ This repo contains the source code for Mesibo Python API.
 
 
 ## Prerequisites
-Building Mesbio Python modules requires the following software installed:
+Building Mesibo Python module requires the following software installed:
 
 **1. Mesibo C/C++ library**
 
