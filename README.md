@@ -122,6 +122,8 @@ For documentation and tutorials [refer](https://mesibo.com/documentation/)
 
 ## Tutorial
 
+This is a simple tutorial for sending a text-message using mesibo python API  
+
 **1.Create your application**
 
 Creating a new application from the [Mesibo console](https://mesibo.com/console)
@@ -129,10 +131,12 @@ Once your application is created, note down the App token. The App Token looks l
 ```
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**
 ```
+
 **2.Create Users (Endpoints)**
 
 Create users from the console by clicking on ‘New User’ button from the Application settings page.
 Note the user Address 
+
 
 **3.Import mesibo API and initialise it**
 
@@ -185,7 +189,7 @@ class test_mesiboNotify(mesiboNotify):
 
 
 ```
-mesibo initialization code :
+Initialization code :
 ```python
 #set user authentication token obtained by creating user
 mesibo.set_accesstoken("cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw") 
@@ -195,10 +199,12 @@ mesibo.set_device(1, "MyUser", "MyAppName", "1.0.0") #
 mesibo.start()
 mesibo.wait() 
 ```
-That’s it - you are now ready to send/receive your first real-time message.
+That’s it - you are now ready to send/receive your first real-time message!
+
 
 
 **4.Sending Messages**
+
 To send messages, we will use send_message real-time API for which we will need destination user, message id and message itself.
 
 Invoke the following function from your code to send a text message
@@ -223,9 +229,12 @@ Let's call this function from on_status to send a message when we are online!
         return 1
 ```
 
-#### Here is the complete code 
+Here is the complete code 
 
 ```python
+#!/usr/bin/env python3
+#File mymesibo.py
+
 import mesibo
 from mesiboNotify.mesiboNotify import mesiboNotify 
 
