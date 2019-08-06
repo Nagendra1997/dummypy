@@ -24,6 +24,18 @@ On CentOS,Debian and derivatives (Ubuntu): python, python-dev (or python3-dev/py
 
 Make sure that the Python package distutils is installed before continuing. For example, in Debian GNU/Linux, installing python-dev also installs distutils.
 
+### Linux, BSD and macOS
+- On Linux, and BSDs, you will need a C compiler (such as GCC).
+
+#### Debian/Ubuntu
+```
+apt-get install libffi-dev python-dev python3-dev
+```
+#### Centos/RHEL/Fedora
+```
+yum install libffi-devel python3-devel python-devel
+```
+
 **3.Compiler**
 
  C/C++ compiler.GCC 4.x (and later)are recommended. 
