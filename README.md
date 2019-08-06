@@ -55,6 +55,10 @@ python setup.py build_ext --inplace
 import mesibo
 from mesiboNotify.mesiboNotify import mesiboNotify
 
+#Mesibo invokes various Listeners for various events.
+#For example, when you receive a message, receive an incoming call etc
+#mesiboNotify is a class of listeners that can be invoked to get real-time notification of events  
+
 
 class test_mesiboNotify(mesiboNotify):
 
@@ -74,8 +78,10 @@ class test_mesiboNotify(mesiboNotify):
 
 
         return 1
+        
 
     def on_message(self, message_params_dict, p_from, data, p_len):
+        #invoked on receiving a new message or reading database messages 
         print("===>on_message: from " + str(p_from) + " of len " + str(p_len))
         print(data[:p_len])  # data buffer/Python bytes object
         print(str(data[:p_len], encoding='utf-8', errors='strict'))
@@ -86,6 +92,7 @@ class test_mesiboNotify(mesiboNotify):
         return 1
 
     def on_messagestatus(self,  message_params_dict, p_from, last):
+        #Invoked when the status of outgoing or sent message is changed
         print("===>on_messagestatus: from " +
               str(p_from) + " " + str(last))
         print("with message_parameters")
@@ -93,7 +100,7 @@ class test_mesiboNotify(mesiboNotify):
         return 1
 
 
-
+#get your accesstoken for the appname you registered from https://mesibo.com/console
 mesibo.set_accesstoken("your_access_token")
 mesibo.set_database("mesibo.db")
 mesibo.set_notify(test_mesiboNotify)
