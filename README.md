@@ -122,9 +122,9 @@ pymesibo.wait()
 
 For documentation and tutorials [refer](https://mesibo.com/documentation/)
 
-## Tutorial
+## Let's get Real-Time!
 
-This is a simple tutorial for sending a text-message using mesibo python API  
+This is a simple tutorial for sending/recieving a text-message using mesibo python API  
 
 **1. Create your application**
 
