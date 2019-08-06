@@ -141,8 +141,6 @@ Note the user Address
 
 **2. Import mesibo API and initialise it**
 
-Create a Python script called mymesibo.py and open it with your favourite editor. The python code to be added is as follows:
-
 Import Mesibo Python Module and Notify/Listener Module
 
 ```python
@@ -232,11 +230,6 @@ Let's call this function from on_status to send a message when we are online!
         return 1
 ```
 
-**4. Run the script**
-```
-python mymesibo.py
-
-```
 
 
 
