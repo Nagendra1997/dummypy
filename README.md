@@ -123,19 +123,22 @@ For documentation and tutorials [refer](https://mesibo.com/documentation/)
 ## Tutorial
 
 **1.Create your application**
+
 Creating a new application from the [Mesibo console](https://mesibo.com/console)
 Once your application is created, note down the App token. The App Token looks like following:
 ```
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**
 ```
 **2.Create Users (Endpoints)**
+
 Create users from the console by clicking on ‘New User’ button from the Application settings page.
 Note the user Address 
 
 **3.Import mesibo API and initialise it**
+
 Create a Python script called mymesibo.py and open it with your favourite editor. The python code to be added is as follows:
 
-Import Mesibo Python Module and Listener Module
+Import Mesibo Python Module and Notify/Listener Module
 
 ```python
 import mesibo
@@ -241,9 +244,6 @@ class test_mesiboNotify(mesiboNotify):
             send_text_message("TestUsr","Hello World! Mesibo is online"):
 
         return 1
-
-
-        return 1
         
 
     def on_message(self, message_params_dict, p_from, data, p_len):
@@ -280,10 +280,7 @@ mesibo.set_notify(test_mesiboNotify) #your custom listener class
 mesibo.set_device(1, "MyUser", "MyAppName", "1.0.0") #
 mesibo.start()
 mesibo.wait() 
-```
 
-
-```
 
 
 
