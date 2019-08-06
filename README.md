@@ -18,7 +18,7 @@ Building Mesibo Python module requires the following software installed:
 
 Install the shared library by following the instructions [here](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script)
 
-**2.Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred)**
+**2. Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred)**
 
 On CentOS,Debian and derivatives (Ubuntu): python, python-dev (or python3-dev/python2-dev)
 
@@ -33,7 +33,7 @@ apt-get install libffi-dev python-dev python3-dev
 yum install libffi-devel python3-devel python-devel
 ```
 
-**3.Compiler**
+**3. Compiler**
 
  C/C++ compiler.GCC 4.x (and later)are recommended. 
  
@@ -124,7 +124,7 @@ For documentation and tutorials [refer](https://mesibo.com/documentation/)
 
 This is a simple tutorial for sending a text-message using mesibo python API  
 
-**1.Create your application**
+**1. Create your application**
 
 Create a new application from the [Mesibo console](https://mesibo.com/console)
 Once your application is created, note down the App token. The App Token looks like following:
@@ -137,7 +137,7 @@ Create users from the console by clicking on ‘New User’ button from the Appl
 Note the user Address 
 
 
-**2.Import mesibo API and initialise it**
+**2. Import mesibo API and initialise it**
 
 Create a Python script called mymesibo.py and open it with your favourite editor. The python code to be added is as follows:
 
@@ -202,7 +202,7 @@ That’s it - you are now ready to send/receive your first real-time message!
 
 
 
-**3.Sending Messages**
+**3. Sending Messages**
 
 To send messages, we will use send_message real-time API for which we will need destination user, message id and message itself.
 
