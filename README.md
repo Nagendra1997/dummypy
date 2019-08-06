@@ -51,7 +51,7 @@ python setup.py build_ext --inplace
 ```
 
 ## API Usage
-```
+```python
 import mesibo
 from mesiboNotify.mesiboNotify import mesiboNotify
 
