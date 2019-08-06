@@ -26,15 +26,8 @@ Make sure that the Python package distutils is installed before continuing. For 
 
 **3.Compiler**
 
- C/C++ compiler.GCC 4.x (and later)are recommended.
+ C/C++ compiler.GCC 4.x (and later)are recommended. 
  
-## Getting the files
-```
-$ mkdir MesiboPython
-$ cd MesiboPython
-$ git clone https://github.com/mesibo/************
-```
-Ensure the following file structure
 ```
 |-- include
 |-- setup.py
@@ -44,21 +37,67 @@ Ensure the following file structure
 ```
 
 ## Basic Installation
-To build and install Mesibo Python Package
+
+To build and install mesibo python module 
 ```
-python3 setup.py install
+sudo python setup.py install
+
 ```
-```
-sudo python2 setup.py install
-```
+
 
 To perform an in-place build that can be run from the source folder run:
 ```
-python3 setup.py build_ext --inplace
+python setup.py build_ext --inplace
 ```
+
+## API Usage
 ```
-python2 setup.py build_ext --inplace
-```
+import mesibo
+from mesiboNotify.mesiboNotify import mesiboNotify
+
+
+class test_mesiboNotify(mesiboNotify):
+
+    def __init__(self):
+        pass
+
+    def on_status(self, status, sub_status, channel, p_from):
+        print("===>on_status: " + str(status) + " substatus: " +
+              str(sub_status) + " channel:" + str(channel) + "from: " + str(p_from))
+        
+        if(int(status) == 1 ): #Connection is setup and you are online
+            msg_params = {"id":mesibo.random()}
+            to = "917019882153" #Destination user ID
+            data = "Hello from mesibo"
+            datalen = len(data)
+            mesibo.send_message(msg_params,to,data,datalen)
+
+
+        return 1
+
+    def on_message(self, message_params_dict, p_from, data, p_len):
+        print("===>on_message: from " + str(p_from) + " of len " + str(p_len))
+        print(data[:p_len])  # data buffer/Python bytes object
+        print(str(data[:p_len], encoding='utf-8', errors='strict'))
+
+        print("with message parmeters:")
+        print(message_params_dict)
+
+        return 1
+
+    def on_messagestatus(self,  message_params_dict, p_from, last):
+        print("===>on_messagestatus: from " +
+              str(p_from) + " " + str(last))
+        print("with message_parameters")
+        print(message_params_dict)
+        return 1
 
 
 
+mesibo.set_accesstoken("your_access_token")
+mesibo.set_database("mesibo.db")
+mesibo.set_notify(test_mesiboNotify)
+mesibo.set_device(1, "your_device_id", "your_app_name", "1.0.0")
+mesibo.start()
+mesibo.wait()
+```
