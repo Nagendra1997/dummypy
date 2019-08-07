@@ -16,7 +16,12 @@ Building Mesibo Python module requires the following software installed:
 
 **1. Mesibo C/C++ library**
 
-Install the shared library by following the instructions [here](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script)
+Install the shared library.For detailed instructions [refer](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script)
+```
+  curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/linux/libmesibo64.so -o /usr/lib/libmesibo64.so
+  curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/include/mesibo.h -o /usr/include/mesibo.h
+  ldconfig
+```
 
 **2. Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred)**
 
