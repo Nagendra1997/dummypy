@@ -169,7 +169,8 @@ class test_mesiboNotify(mesiboNotify):
         
 
     def on_message(self, message_params_dict, p_from, data, p_len):
-        #invoked on receiving a new message or reading database messages.You will receive messages here.
+        #invoked on receiving a new message or reading database messages
+        #You will receive messages here.
         print("===>on_message: from " + str(p_from) + " of len " + str(p_len))
         print(data[:p_len])  # data buffer/Python bytes object
         print(str(data[:p_len], encoding='utf-8', errors='strict'))
@@ -180,7 +181,8 @@ class test_mesiboNotify(mesiboNotify):
         return 1
 
     def on_messagestatus(self,  message_params_dict, p_from, last):
-        #Invoked when the status of outgoing or sent message is changed.You will receive status of sent messages here
+        #Invoked when the status of outgoing or sent message is changed
+        #You will receive status of sent messages here
         print("===>on_messagestatus: from " +
               str(p_from) + " " + str(last))
         print("with message_parameters")
