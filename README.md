@@ -81,7 +81,7 @@ class test_mesiboNotify(mesiboNotify):
         if(int(status) == 1 ): #Connection is setup and you are online
             pymesibo = Mesibo() #Instantiate Mesibo(Singleton already initialised)
             msg_params = {"id":pymesibo.random()}
-            to = "9199xxxxxxxx" #Destination user ID
+            to = "91xxxxxxxx" #Destination user ID
             data = "Hello from mesibo"
             datalen = len(data)
             pymesibo.send_message(msg_params,to,data,datalen)
@@ -111,6 +111,7 @@ class test_mesiboNotify(mesiboNotify):
 
 
 pymesibo = Mesibo() #Instantiate Mesibo
+#Initialisation code
 #get your accesstoken for the appname you registered from https://mesibo.com/console
 pymesibo.set_accesstoken("your_access_token")
 pymesibo.set_database("mesibo.db")
@@ -199,13 +200,10 @@ pymesibo.set_device(1, "MyUser", "MyAppName", "1.0.0")
 pymesibo.start()
 pymesibo.wait() 
 ```
-That’s it - you are now ready to send/receive your first real-time message!
-
-
 
 **3. Sending Messages**
 
-To send messages, we will use send_message real-time API for which we will need destination user, message id and message itself.
+To send messages,you can use send_message real-time API for which you will need destination user, message id and message itself.
 
 Invoke the following function from your code to send a text message
 ```python
@@ -217,14 +215,14 @@ def send_text_message(to,message):
         pymesibo.send_message(msg_params,to,data,datalen)
 
 ```
-Let's call this function from on_status to send a message when we are online! 
+Call this function from on_status to send a message when you are online.
 ```python
     def on_status(self, status, sub_status, channel, p_from):
         print("===>on_status: " + str(status) + " substatus: " +
               str(sub_status) + " channel:" + str(channel) + "from: " + str(p_from))
         
         if(int(status) == 1 ): #Connection is setup and you are online
-            #The destination address can even be a phone number like "91999xxxxxxx"
+            #The destination address can even be a phone number like "91xxxxxxxxxx"
             send_text_message("TestUsr","Hello World! Mesibo is online"):
 
         return 1
