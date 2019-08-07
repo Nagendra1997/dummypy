@@ -5,7 +5,7 @@ Mesibo supports almost all popular platforms and languages for you to quickly bu
 
 Mesibo's high performance C++ and Python libraries enable you to interface your chat clients with various scientific computing and machine learning systems on your backend like TensorFlow, Matlab, Octave, NumPy etc to create a powerful chat experience.
 
-This repo contains the source code for Mesibo Python API.
+This repo contains the source code for Mesibo Python API .
 
 - **Website:** https://mesibo.com
 - **Documentation:** https://mesibo.com/documentation/
@@ -16,7 +16,7 @@ Building Mesibo Python module requires the following software installed:
 
 **1. Mesibo C/C++ library**
 
-Install the shared library. For detailed instructions [refer](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script).
+Install the shared library (On Linux based systems). For detailed instructions [refer](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script).
 ```
   curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/linux/libmesibo64.so -o /usr/lib/libmesibo64.so
   curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/include/mesibo.h -o /usr/include/mesibo.h
