@@ -81,7 +81,7 @@ class test_mesiboNotify(mesiboNotify):
         if(int(status) == 1 ): #Connection is setup and you are online
             pymesibo = Mesibo() #Instantiate Mesibo(Singleton already initialised)
             msg_params = {"id":pymesibo.random()}
-            to = "91xxxxxxxx" #Destination user ID
+            to = "91xxxxxxxxxx" #Destination user ID
             data = "Hello from mesibo"
             datalen = len(data)
             pymesibo.send_message(msg_params,to,data,datalen)
