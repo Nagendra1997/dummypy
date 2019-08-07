@@ -1,11 +1,13 @@
-## Mesibo Python API
+## Mesibo Real-Time Python API [BETA]
+
+This repo contains the source code for Mesibo Python API .
+
 Mesibo offers everything to make your app real-time and scalable for your first billion users and the next. It's modular, lightweight and easy to integrate.
 
 Mesibo supports almost all popular platforms and languages for you to quickly build your applications. Whether you are developing mobile apps (Android, iOS, Java, Objective-C, C++), web apps (Javascript), integrating with backend (Linux, MacOS, Windows, Python, C++) or creating cool devices using Raspberry Pi, mesibo has APIs for you.
 
 Mesibo's high performance C++ and Python libraries enable you to interface your chat clients with various scientific computing and machine learning systems on your backend like TensorFlow, Matlab, Octave, NumPy etc to create a powerful chat experience.
 
-This repo contains the source code for Mesibo Python API .
 
 - **Website:** https://mesibo.com
 - **Documentation:** https://mesibo.com/documentation/
@@ -17,13 +19,13 @@ Building Mesibo Python module requires the following software installed:
 **1. Mesibo C/C++ library**
 
 Install the shared library (On Linux based systems). For detailed instructions [refer](https://mesibo.com/documentation/install/linux/#install-using-the-convenience-script).
+Mesibo Python Module is a C extension module for [mesibo C/C++ library](https://github.com/mesibo/libmesibo)
 ```
-  curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/linux/libmesibo64.so -o /usr/lib/libmesibo64.so
-  curl -ks https://raw.githubusercontent.com/mesibo/libmesibo/master/include/mesibo.h -o /usr/include/mesibo.h
-  ldconfig
+curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh | sudo bash -
+  
 ```
 
-**2. Python 3(3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred)**
+**2. Python 3 (3.4.x or newer preferred) / Python 2 (2.7.x or newer preferred)**
 
 On CentOS,Debian and derivatives (Ubuntu): python, python-dev (or python3-dev/python2-dev)
 
@@ -129,7 +131,9 @@ For documentation and tutorials [refer](https://mesibo.com/documentation/)
 
 ## Let's get Real-Time!
 
-This is a simple tutorial for sending/recieving a text-message using mesibo python API  
+This is a simple tutorial for sending/recieving a text-message using mesibo python API.
+Before you begin please go through [Get Started](https://mesibo.com/documentation/get-started/) guide.
+Refer [Write your First mesibo Enabled Application](https://mesibo.com/documentation/tutorials/first-app/)
 
 **1. Create your application**
 
