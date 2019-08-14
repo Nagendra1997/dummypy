@@ -62,7 +62,6 @@ pip install --upgrade mesibo
 To build and install mesibo python module 
 ```
 sudo python setup.py install
-
 ```
 
 To perform an in-place build that can be run from the source folder run:
