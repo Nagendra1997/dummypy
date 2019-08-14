@@ -225,7 +225,7 @@ def send_text_message(to,message):
         pymesibo.send_message(msg_params,to,data,datalen)
 
 ```
-Call this function from on_status to send a message when you are online.
+For example,Call this function from on_status to send a message when you are online.
 ```python
     def on_status(self, status, sub_status, channel, p_from):
         print("===>on_status: " + str(status) + " substatus: " +
