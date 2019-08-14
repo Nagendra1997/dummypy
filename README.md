@@ -54,6 +54,12 @@ yum install libffi-devel python3-devel python-devel
 
 ## Basic Installation
 
+To install the pre-release via pip
+```
+pip install --upgrade kiteconnect
+
+```
+
 To build and install mesibo python module 
 ```
 sudo python setup.py install
