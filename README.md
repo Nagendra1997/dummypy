@@ -1,4 +1,4 @@
-## Mesibo Python API   [ BETA ]
+## Mesibo Python API  
 
 This repo contains the source code for Mesibo Real-Time Python API .
 
