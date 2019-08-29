@@ -107,8 +107,7 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 ## Step 3 - Run Mesibo
 
-You need to specify the app token which needs to be run on-premise,to the mesibo instance.
-The app token can be obtained from mesibo console which looks like the following 
+You need to specify the app token which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
 ```
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
 
@@ -132,13 +131,28 @@ The logs should look like below:
 : Starting Mesibo
 
 ``` 
+![Logs Screenshot](mesibo.com)
 
 Now, check Running status of your server from Mesibo Console --> App Settings --> On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
 ![Console Screenshot](mesibo.com)
 
-If your on-premise server is setup and running mesibo continue else refer to [troubleshooting](mesibo.com)
+If your on-premise server is setup and running mesibo continue , else refer to [troubleshooting](mesibo.com)
+
+## Step 3 - Enable On-Premise
+Please note : 
+DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
+
+![Enable On-Premise screenshot](mesibo.com)
+
+Turn on the on-premise switch and your app will be connected to your data center immediately. If a user logs into your application connected to Mesibo On-Premise your server logs should output
+
+```
+: login successful: root (uid xxxx) aid: (xxxx) 
+
+```
+
 
 
 
@@ -146,4 +160,10 @@ If your on-premise server is setup and running mesibo continue else refer to [tr
 
 
 ## Step 4 - Group Management
+
+
+## Troubleshooting
+You can use the Mesibo C/C++ API to troubleshoot your on-premise deployment.
+
+
 
