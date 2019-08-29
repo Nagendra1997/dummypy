@@ -165,5 +165,8 @@ Turn on the on-premise switch and your app will be connected to your data center
 ## Troubleshooting
 You can use the Mesibo C/C++ API to troubleshoot your on-premise deployment.
 
+## FAQ
+For a more detailed FAQ section [refer](mesibo.com)
+
 
 
