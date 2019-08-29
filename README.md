@@ -5,7 +5,7 @@ title: Installing & Running Mesibo On-Premise Server
 ---
 Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do it to download Mesibo on-premise server image and run it in your own data center. That's it! 
 
-Mesibo On-Premise is the perfect solution for ultimate control over sensitive data,// or for that matter, all your data.// Messenger is an open-source app with real-time messaging, voice and video call features.// We have also released the entire source code of Mesibo Android and iOS Apps on GitHub, where it can be // it is continuously updated. You can download entire source code, and customize it to suit your needs. 
+Mesibo On-Premise is the perfect solution for ultimate control over your sensitive data.We have also released the entire source code of Mesibo Android and iOS [sample apps](https://github.com/mesibo/samples) on GitHub, which is continuously updated. You can download the entire source code, and customize it to suit your needs. 
 
 ### Features
 - All the mesibo features, including Messaging, Voice and Video calling
@@ -18,6 +18,17 @@ Mesibo On-Premise is the perfect solution for ultimate control over sensitive da
 - At no additional cost
 
 ### Prerequisites
+It is required that you are familar with:
+
+- mesibo API and successfuly using Mesibo cloud services. If not, please refer to Mesibo 
+[getting started](https://mesibo.com/documentation/get-started/) guide and tutorials before setting up On-Premise server.
+
+- setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
+
+- setting up Docker and using Docker images. If not, refer to excellent Docker documentation and various online tutorials on docker. 
+
+
+### Requirements
 Mesibo made it extremely simple for you to setup an On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and rest will be taken care by Mesibo. 
 
 Mesibo only requires the following:
@@ -38,15 +49,6 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
-### Assumptions
-It is assumed that you are familar with:
-
-- mesibo API and successfuly using Mesibo cloud services. If not, please refer to Mesibo 
-[getting started](https://mesibo.com/documentation/get-started/) guide and tutorials before setting up On-Premise server.
-
-- setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
-
-- setting up Docker and using Docker images. If not, refer to excellent Docker documentation and various online tutorials on docker. 
 
 
 ## Step 1 - Install Docker
@@ -134,13 +136,13 @@ The logs should look like below:
 
 ``` 
 
-Now, check Running status of your server from Mesibo Console-->App Settings-->On Premise Hosting. If successfull the running status field will contain your hostname , else it will contain "Not running"
+Now, check Running status of your server from Mesibo Console-->App Settings-->On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 ```
 Console Screenshot
 
 ```
-If your on-premise server is setup and running mesibo continue, else refer to [troubleshooting](mesibo.com)
+If your on-premise server is setup and running mesibo continue else refer to [troubleshooting](mesibo.com)
 
 
 
