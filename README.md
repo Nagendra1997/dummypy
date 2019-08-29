@@ -120,14 +120,12 @@ In the below command Replace APP_TOKEN with the your app token that you got from
 ```
 docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
 ```
-The logs can be read at /var/log/mesibo/mesibo
+The logs can be read using the following command 
+where CONTAINER is the container ID
 ```
-cat /var/log/mesibo/mesibo
+docker logs CONTAINER
 ```
 
-For immediate viewing of the logs you can run 
-```
-docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -it mesibo/mesibo APP_TOKEN
 ```
 The logs should look like below:
 ```
@@ -138,10 +136,9 @@ The logs should look like below:
 
 Now, check Running status of your server from Mesibo Console-->App Settings-->On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
-```
-Console Screenshot
 
-```
+![Console Screenshot](mesibo.com)
+
 If your on-premise server is setup and running mesibo continue else refer to [troubleshooting](mesibo.com)
 
 
