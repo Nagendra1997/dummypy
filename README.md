@@ -140,6 +140,7 @@ Now, check Running status of your server from Mesibo Console-->App Settings-->On
 Console Screenshot
 
 ```
+If your on-premise server is setup and running mesibo continue, else refer to [troubleshooting](mesibo.com)
 
 
 
