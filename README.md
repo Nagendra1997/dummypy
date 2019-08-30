@@ -108,10 +108,10 @@ Mesibo requires following configuration:
 
 
 
-## Step 3 - Configure TLS Certificate
+## Step 4 - Configure TLS Certificate
 Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate. Note that, wild card certificate is not recommended. 
 
-## Step 3 - Run Mesibo
+## Step 5 - Run Mesibo
 
 You need to specify the app token which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
 ```
@@ -136,6 +136,7 @@ where CONTAINER is the container ID
 docker logs CONTAINER
 ```
 
+
 To get the container ID use 
 ```
 docker ps
@@ -143,6 +144,7 @@ docker ps
 ```
 
 ![container Screenshot](container.jpg)
+
 
 
 
@@ -168,7 +170,7 @@ If your on-premise server is setup properly continue with the next step , else r
 
 
 
-## Step 3 - Enable On-Premise
+## Step 6 - Enable On-Premise
 Please note : 
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
@@ -184,20 +186,25 @@ That's it ! You are now up with mesibo running on your own server.
 
 
 
-## Step 3 - Firewall
+## Step 7 - Firewall
 
 
-## Step 4 - Group Management
+## Step 8 - Group Management
 
+
+
+## On-Premise vs Cloud offering
+You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
+
+If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 ## Deploying with a cloud service provider
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
 
 
-
 ## Loading modules and configuration scripts
 
-You can use the Mesibo C/C++ shared library module to troubleshoot your on-premise deployment.
+You can use the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
 
 ```
 $ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
@@ -210,7 +217,6 @@ $ sudo ./install.sh
 You can run a C++ test file to send and recieve messages and troubleshoot your on premise installation.
 
 ```
-$ curl get test.cpp
 $ g++ test.cpp -o testmesibo -lmesibo64
 $ ./testmesibo
 
@@ -242,6 +248,12 @@ Please make sure in your console that the Running status for your server is up b
 
 ## What happens if my server disconnects due to a network issue while hosting on premise? 
 In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
+
+## I am currently using mesibo Cloud services. If I enable on-premise how long will it take to switch connection to my server?
+As soon you enable on-premise your application will get connected to Mesibo running on your server.
+
+## (Needs review )What happens if I am connected to my server and disable On-Premise from console?
+Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.However,it will switch to your server as soon as you enable on-premise.
 
 ## Can I deploy mesibo on a custom cloud service provider?
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
