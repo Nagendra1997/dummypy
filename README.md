@@ -83,6 +83,7 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
+![Hello World](helloworld.jpg)
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise server by running the following command
@@ -90,6 +91,7 @@ Download Mesibo On-Premise server by running the following command
 ```
 $ sudo docker pull mesibo/mesibo
 ```
+![Pull Mesibo](pullmesibo.jpg)
 
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
