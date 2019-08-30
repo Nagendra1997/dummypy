@@ -122,7 +122,7 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 
 ```bash
-$ docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
+$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
 ```
 
 You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
@@ -136,12 +136,12 @@ You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo
 
 The logs can be read using the following command 
 ```bash
-$ docker logs CONTAINER ID
+$ sudo docker logs CONTAINER ID
 ```
 
 To get the container ID use 
 ```bash
-$ docker ps
+$ sudo docker ps
 ```
 
 ![container Screenshot](container.jpg)
@@ -201,7 +201,7 @@ If you do not wish to host mesibo on your own server/infratructure you are free 
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
 
 
-## Loading modules and configuration scripts
+## Loading modules and scripts
 
 You can use the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
 
@@ -220,16 +220,6 @@ $ g++ test.cpp -o testmesibo -lmesibo64
 $ ./testmesibo
 
 ```
-
-If you prefer to customise your installation using a configuration file you may edit the file at /var/log/mesibo/mesibo.conf and run a configuration update script.
-
-```bash
-$ chmod a+x mesibo_config.sh
-
-$ sudo ./mesibo_config.sh
-
-```
-
 
 ## FAQ / Troubleshooting
 
