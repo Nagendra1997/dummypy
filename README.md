@@ -125,12 +125,16 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 
 ```bash
-$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
+$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 
+-d mesibo/mesibo APP_TOKEN
 ```
 
-You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console 
+You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
+The app token can be obtained from mesibo console 
 
 ![App token Mesibo Console](token.jpg)
+
+
 
 The logs can be read using
 
@@ -144,11 +148,6 @@ $ sudo docker ps
 ```
 
 The logs should look like below:
-```
-: MySQL: connection opened
-: Starting Mesibo
-
-``` 
 ![Logs Screenshot](logs.jpg)
 
 
@@ -160,7 +159,7 @@ Now, check Running status of your server from Mesibo  console â†’ App Settings â
 
 
 
-If your on-premise server is setup properly continue with the next step , else refer to [troubleshooting section](mesibo.com)
+If your on-premise server is setup properly continue with the next step , else refer to [troubleshooting](mesibo.com)
 
 
 
