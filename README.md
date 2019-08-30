@@ -25,7 +25,7 @@ It is required that you are familar with:
 
 - setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
 
-- setting up Docker and using Docker images. If not, refer to excellent Docker documentation and various online tutorials on docker. 
+- setting up Docker and using Docker images. If not, refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
 
 
 ### Requirements
@@ -98,14 +98,17 @@ Mesibo requires following configuration:
 
 - Mesibo App Token, which you can get from Mesibo Console
 
-- Database Information : Database Name, Database host name, Database Password
-
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
+
+- Database Information : Database Name,Database Username,Database host , Database Password
 
 - TLS/SSL Cerificate for your hostname [Optional but recommended]
 
 ![Console Screenshot](console.jpg)
 
+Also, note that there is a configuration setting available to direct mesibo in case of premise issues. If you 'enable Auto fallback to cloud'  mesibo will connect to cloud service if your premise/datacenter having issues. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
+
+If you enable Privately Hosted ,no network check will be performed by Mesibo.
 
 
 ## Step 4 - Configure TLS Certificate
@@ -127,7 +130,6 @@ In the below command Replace APP_TOKEN with the your app token that you got from
 ```bash
 $ docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
 ```
-
 
 
 The logs can be read using the following command 
