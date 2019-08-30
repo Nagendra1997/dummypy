@@ -49,6 +49,9 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
+### How Mesibo On-Premise works
+
+
 
 
 ## Step 1 - Install Docker
