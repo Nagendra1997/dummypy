@@ -123,7 +123,8 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 ## Step 5 - Run Mesibo
 Before running mesibo docker image, please ensure that you have configured it in mesibo console.
-![Config Complete][not_running.jpg]
+![Config Complete](not_running.jpg)
+
 
 
 ```bash
