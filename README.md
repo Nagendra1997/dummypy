@@ -132,12 +132,10 @@ $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 
 
 You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console 
 
-```
 ![App token Mesibo Console](token.jpg)
 
+The logs can be read using
 
-
-The logs can be read using the following command 
 ```bash
 $ sudo docker logs CONTAINER ID
 ```
@@ -148,7 +146,6 @@ $ sudo docker ps
 ```
 
 ![container Screenshot](container.jpg)
-
 
 
 
