@@ -3,7 +3,7 @@ description: Mesibo On-Premise Server
 keywords: open, source, contributing, overview, on-premise
 title: Installing & Running Mesibo On-Premise Server
 ---
-Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do it to download Mesibo on-premise server image and run it in your own data center. That's it! 
+Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is  download Mesibo on-premise server image and run it in your own data center. That's it! 
 
 Mesibo On-Premise is the perfect solution for ultimate control over your sensitive data.We have also released the entire source code of Mesibo Android and iOS [sample apps](https://github.com/mesibo/samples) on GitHub, which is continuously updated. You can download the entire source code, and customize it to suit your needs. 
 
