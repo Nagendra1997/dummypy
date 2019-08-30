@@ -207,7 +207,7 @@ You can't go wrong with either model. While our Cloud service let you start imme
 If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 ## Deploying with a cloud service provider
-All major cloud service providers support running docker images. To create an on demand instance of Mesibo in the cloud, refer to respective documentation on running docker containers :
+All major cloud service providers support running docker containers. To create an on demand instance of Mesibo in the cloud, refer to respective documentation on running docker containers :
 - [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/) 
 - [Azure](https://azure.microsoft.com/en-us/services/container-instances/) 
 - [Google Cloud](https://cloud.google.com/run/docs/deploying)
