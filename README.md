@@ -123,7 +123,7 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 ## Step 5 - Run Mesibo
 Before running mesibo docker image, please ensure that you have configured it in mesibo console.
-![Config Complete][not_runnig.jpg]
+![Config Complete][not_running.jpg]
 
 
 ```bash
@@ -154,14 +154,10 @@ $ sudo docker ps
 ```
 
 
-
-
-
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
 ![Console Screenshot](configcomplete.jpg)
-
 
 
 If your on-premise server is setup properly continue with the next step , else refer to [troubleshooting](mesibo.com)
@@ -169,8 +165,11 @@ If your on-premise server is setup properly continue with the next step , else r
 
 
 ## Step 6 - Enable On-Premise
-Please note : 
+:warning::warning::warning:
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
+
+Before Enabling the On-Premise switch ensure your that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
+
 
 ![Enable On-Premise screenshot](enableon.jpg)
 
