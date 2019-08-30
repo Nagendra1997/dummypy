@@ -91,6 +91,8 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
+Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
+![On Premise Off](enableoff.jpg)
 
 Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
 
@@ -157,7 +159,6 @@ The logs should look like below:
 
 
 
-
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
@@ -173,7 +174,7 @@ If your on-premise server is setup properly continue with the next step , else r
 Please note : 
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
-![Enable On-Premise screenshot](runstatus.jpg)
+![Enable On-Premise screenshot](enableon.jpg)
 
 Turn on the on-premise switch and your app will be connected to your data center immediately. If a user logs into your application connected to Mesibo On-Premise your server logs should output
 
