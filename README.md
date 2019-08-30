@@ -145,10 +145,6 @@ To get the container ID use
 $ sudo docker ps
 ```
 
-![container Screenshot](container.jpg)
-
-
-
 The logs should look like below:
 ```
 : MySQL: connection opened
