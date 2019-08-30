@@ -88,18 +88,25 @@ Download Mesibo On-Premise server by running the following command
 $ sudo docker pull mesibo/mesibo
 ```
 
-However, before we launch Mesibo, we need to setup a mesibo configuraiton file. 
+However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
+
+Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
+
 Mesibo requires following configuration:
 
 - Mesibo App Token, which you can get from Mesibo Console
 
-- Database Information
+- Database Information : Database Name, Database host name, Database Password
 
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
 
 - TLS/SSL Cerificate for your hostname [Optional but recommended]
+
+![Config console] (mesibo.com)
+
+
 
 
 ## Step 3 - Configure TLS Certificate
@@ -112,7 +119,7 @@ You need to specify the app token which needs to be run on-premise,to the mesibo
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
 
 ```
-![App token Mesibo Console](app-token.jpg)
+![App token Mesibo Console](https://mesibo.com/documentation/tutorials/first-app/images/app-token.jpg)
 
 In the below command Replace APP_TOKEN with the your app token that you got from console and then run it.
 
@@ -152,7 +159,7 @@ Turn on the on-premise switch and your app will be connected to your data center
 : login successful: root (uid xxxx) aid: (xxxx) 
 
 ```
-
+That's it ! You are now up with mesibo running on your own server.
 
 
 
@@ -162,11 +169,65 @@ Turn on the on-premise switch and your app will be connected to your data center
 ## Step 4 - Group Management
 
 
-## Troubleshooting
-You can use the Mesibo C/C++ API to troubleshoot your on-premise deployment.
+## Deploying with a cloud service provider
+On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
+
+
+
+## Loading modules and configuration scripts
+
+You can use the Mesibo C/C++ shared library module to troubleshoot your on-premise deployment.
+
+```
+$ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
+
+$ chmod a+x install.sh
+
+$ sudo ./install.sh
+
+```
+You can run a C++ test file to send and recieve messages and troubleshoot your on premise installation.
+
+```
+$ curl get test.cpp
+$ g++ test.cpp -o testmesibo -lmesibo64
+$ ./testmesibo
+
+```
+
+If you prefer to customise your installation using a configuration file you may edit the file at /var/log/mesibo/mesibo.conf and run a configuration update script.
+
+```
+$ chmod a+x mesibo_config.sh
+
+$ sudo ./mesibo_config.sh
+
+```
+
 
 ## FAQ
-For a more detailed FAQ section [refer](mesibo.com)
+For a more detailed FAQ section on On Premise [refer](mesibo.com)
+
+I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
+
+You can check the logs for your server using 
+```
+docker logs CONTAINER ID 
+```
+When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
+
+What happens if I have enabled on premise and my server is not running?
+Please make sure in your console that the Running status for your server is up before enabling on premise. If your server is not running and you have enabled on premise your app will not be able to connect with mesibo and your users will fail to get your service.
+
+What happens if my server disconnects due to a network issue while hosting on premise? 
+In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
+
+Can I deploy mesibo on a custom cloud service provider?
+
+I do not wish to use on premise, what should I do?
+Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
+
+
 
 
 
