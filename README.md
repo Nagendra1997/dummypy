@@ -141,14 +141,17 @@ The logs can be read using
 ```bash
 $ sudo docker logs CONTAINER ID
 ```
+The logs should look like below:
 
-To get the container ID use 
+![Logs Screenshot](logs.jpg)
+
+
+To get the CONTAINER ID use 
 ```bash
 $ sudo docker ps
 ```
 
-The logs should look like below:
-![Logs Screenshot](logs.jpg)
+
 
 
 
