@@ -128,7 +128,7 @@ You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
 
 ```
-![App token Mesibo Console](app-token.jpg)
+![App token Mesibo Console](token.jpg)
 
 
 
