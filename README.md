@@ -98,6 +98,8 @@ Mesibo requires following configuration:
 
 - Mesibo App Token, which you can get from Mesibo Console
 
+![App token Mesibo Console](app-token.jpg)
+
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
 
 - Database Information : Database Name,Database Username,Database host , Database Password
@@ -116,20 +118,18 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 ## Step 5 - Run Mesibo
 
-You need to specify the app token which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
+
+```bash
+$ docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
+```
+
+You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
 ```
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
 
 ```
 ![App token Mesibo Console](app-token.jpg)
 
-
-
-In the below command Replace APP_TOKEN with the your app token that you got from console and then run it.
-
-```bash
-$ docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
-```
 
 
 The logs can be read using the following command 
