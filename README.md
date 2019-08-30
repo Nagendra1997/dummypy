@@ -49,7 +49,7 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
-### How Mesibo On-Premise works
+## How Mesibo On-Premise works
 Running Mesibo on your own premise offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more.Please note, there is no change whtasoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
 
 With Mesibo On-Premise when you connect to mesibo, your connection is redirected to your chosen host/server.
