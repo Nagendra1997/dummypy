@@ -119,7 +119,7 @@ You need to specify the app token which needs to be run on-premise,to the mesibo
 **cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
 
 ```
-![App token Mesibo Console](https://mesibo.com/documentation/tutorials/first-app/images/app-token.jpg)
+![App token Mesibo Console](app-token.jpg)
 
 In the below command Replace APP_TOKEN with the your app token that you got from console and then run it.
 
@@ -138,12 +138,12 @@ The logs should look like below:
 : Starting Mesibo
 
 ``` 
-![Logs Screenshot](mesibo.com)
+![Logs Screenshot](logs.jpg)
 
 Now, check Running status of your server from Mesibo Console --> App Settings --> On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
-![Console Screenshot](mesibo.com)
+![Console Screenshot](console.jpg)
 
 If your on-premise server is setup and running mesibo continue , else refer to [troubleshooting](mesibo.com)
 
@@ -151,7 +151,7 @@ If your on-premise server is setup and running mesibo continue , else refer to [
 Please note : 
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
-![Enable On-Premise screenshot](mesibo.com)
+![Enable On-Premise screenshot](runstatus.jpg)
 
 Turn on the on-premise switch and your app will be connected to your data center immediately. If a user logs into your application connected to Mesibo On-Premise your server logs should output
 
@@ -206,9 +206,9 @@ $ sudo ./mesibo_config.sh
 
 
 ## FAQ
-For a more detailed FAQ section on On Premise [refer](mesibo.com)
+For a more detailed FAQ section on On Premise [refer](https://mesibo.com/documentation/faq/)
 
-I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
+#I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
 
 You can check the logs for your server using 
 ```
@@ -216,15 +216,16 @@ docker logs CONTAINER ID
 ```
 When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
 
-What happens if I have enabled on premise and my server is not running?
+#What happens if I have enabled on premise and my server is not running?
 Please make sure in your console that the Running status for your server is up before enabling on premise. If your server is not running and you have enabled on premise your app will not be able to connect with mesibo and your users will fail to get your service.
 
-What happens if my server disconnects due to a network issue while hosting on premise? 
+#What happens if my server disconnects due to a network issue while hosting on premise? 
 In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
 
-Can I deploy mesibo on a custom cloud service provider?
+#Can I deploy mesibo on a custom cloud service provider?
+On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
 
-I do not wish to use on premise, what should I do?
+#I do not wish to use on premise, what should I do?
 Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
 
 
