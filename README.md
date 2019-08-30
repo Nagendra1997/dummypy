@@ -207,23 +207,23 @@ You can't go wrong with either model. While our Cloud service let you start imme
 If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 ## Deploying with a cloud service provider
-All major cloud providers support running docker 
-On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
+All major cloud service providers support running docker images. To create an on demand instance of Mesibo in the cloud, refer to respective documentation on running docker containers :
+- [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/) 
+- [Azure](https://azure.microsoft.com/en-us/services/container-instances/) 
+- [Google Cloud](https://cloud.google.com/run/docs/deploying)
 
 
 ## Loading modules and scripts
 
-You can use the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
+You can load the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
 
 ```bash
 $ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
-
 $ chmod a+x install.sh
-
 $ sudo ./install.sh
 
 ```
-You can run a C++ test file to send and recieve messages and troubleshoot your on premise installation.
+A C++ test file can be used to send and recieve messages.
 
 ```bash
 $ g++ test.cpp -o testmesibo -lmesibo64
