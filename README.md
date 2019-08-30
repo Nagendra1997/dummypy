@@ -139,25 +139,29 @@ Run mesibo :
 
 ```bash
 $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 
--d mesibo/mesibo APP_TOKEN
+-d mesibo/mesibo <APP_TOKEN>
 ```
 
-You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
+You need to specify the <APP_TOKEN> which needs to be run on-premise,to the mesibo instance.
 The app token can be obtained from mesibo console 
 
 ![App token Mesibo Console](token.jpg)
 
-The logs should look like below:
-```
+ON sucessfull start of Mesibo ,the output log should look like below:
 
 ![Logs Screenshot](logs.jpg)
 
+Alternatively, you can view logs using
+```bash
+$ sudo docker logs <CONTAINER_ID>
+```
 
-To get the CONTAINER ID use 
+To get <CONTAINER ID> use 
+	
 ```bash
 $ sudo docker ps
 ```
-
+If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](mesibo.com)
 
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
