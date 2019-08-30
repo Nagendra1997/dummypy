@@ -158,7 +158,7 @@ The logs should look like below:
 
 
 
-Now, check Running status of your server from Mesibo Console --> App Settings --> On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
+Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
 ![Console Screenshot](console.jpg)
