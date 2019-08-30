@@ -3,7 +3,7 @@ description: Mesibo On-Premise Server
 keywords: open, source, contributing, overview, on-premise
 title: Installing & Running Mesibo On-Premise Server
 ---
-Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do it to download Mesibo on-premise server image and run it in your own data center. That's it! 
+Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is  download Mesibo on-premise server image and run it in your own data center. That's it! 
 
 Mesibo On-Premise is the perfect solution for ultimate control over your sensitive data.We have also released the entire source code of Mesibo Android and iOS [sample apps](https://github.com/mesibo/samples) on GitHub, which is continuously updated. You can download the entire source code, and customize it to suit your needs. 
 
@@ -49,10 +49,13 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
-### How Mesibo On-Premise works
+## How Mesibo On-Premise works
+Running Mesibo on your own premise offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more.Please note, there is no change whtasoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
 
+With Mesibo On-Premise when you connect to mesibo, your connection is redirected to your chosen host/server.
+If in any case your On-Premise server fails or has issues then you have the option of falling back to mesibo cloud services.
 
-
+To setup Mesibo-On Premise follow these steps:
 
 ## Step 1 - Install Docker
 Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed Docker on your server, you can skip to Step 2. 
@@ -94,7 +97,7 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
-Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
+:warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 ![On Premise Off](enableoff.jpg)
 
 Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
@@ -119,41 +122,46 @@ If you enable Privately Hosted ,no network check will be performed by Mesibo.
 
 
 ## Step 4 - Configure TLS Certificate
-Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate. Note that, wild card certificate is not recommended. 
+
+To configure TLS/SSL certificate you need to provide the folder path to the following files :
+cert.pem , chain.pem , privkey.pem
+
+Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by browsers and you may not be able to run Web API based applications.
+
+You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
 
 ## Step 5 - Run Mesibo
+Before running mesibo docker image, please ensure that you have configured it in mesibo console.
+![Config Complete](not_running.jpg)
 
+
+Run mesibo :
 
 ```bash
 $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 
--d mesibo/mesibo APP_TOKEN
+-d mesibo/mesibo <APP_TOKEN>
 ```
 
-You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
+You need to specify the <APP_TOKEN> which needs to be run on-premise,to the mesibo instance.
 The app token can be obtained from mesibo console 
 
 ![App token Mesibo Console](token.jpg)
 
-
-
-The logs can be read using
-
-```bash
-$ sudo docker logs CONTAINER ID
-```
-The logs should look like below:
+ON sucessfull start of Mesibo ,the output log should look like below:
 
 ![Logs Screenshot](logs.jpg)
 
+Alternatively, you can view logs using
+```bash
+$ sudo docker logs <CONTAINER_ID>
+```
 
-To get the CONTAINER ID use 
+To get <CONTAINER ID> use 
+	
 ```bash
 $ sudo docker ps
 ```
-
-
-
-
+If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](mesibo.com)
 
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
@@ -161,14 +169,17 @@ Now, check Running status of your server from Mesibo  console → App Settings �
 ![Console Screenshot](configcomplete.jpg)
 
 
-
 If your on-premise server is setup properly continue with the next step , else refer to [troubleshooting](mesibo.com)
 
 
 
 ## Step 6 - Enable On-Premise
-Please note : 
+:warning::warning::warning:
+
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
+
+Before Enabling the On-Premise switch ensure that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
+
 
 ![Enable On-Premise screenshot](enableon.jpg)
 
@@ -194,6 +205,7 @@ You can't go wrong with either model. While our Cloud service let you start imme
 If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 ## Deploying with a cloud service provider
+All major cloud providers support running docker 
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
 
 
