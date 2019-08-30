@@ -91,8 +91,6 @@ Download Mesibo On-Premise server by running the following command
 ```
 $ sudo docker pull mesibo/mesibo
 ```
-![Pull Mesibo](pullmesibo.jpg)
-
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
