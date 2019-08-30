@@ -49,6 +49,9 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
+### How Mesibo On-Premise works
+
+
 
 
 ## Step 1 - Install Docker
@@ -80,6 +83,7 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
+![Hello World](helloworld.jpg)
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise server by running the following command
@@ -87,6 +91,7 @@ Download Mesibo On-Premise server by running the following command
 ```
 $ sudo docker pull mesibo/mesibo
 ```
+![Pull Mesibo](pullmesibo.jpg)
 
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
@@ -125,16 +130,12 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
 ```
 
-You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console which looks like the following 
-```
-**cn9cvk6gnm15e7lrjb2k7ggggax5h90n5x7dp4sam6kwitl2hmg4cmwabet4zgdw**    
+You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.The app token can be obtained from mesibo console 
 
-```
 ![App token Mesibo Console](token.jpg)
 
+The logs can be read using
 
-
-The logs can be read using the following command 
 ```bash
 $ sudo docker logs CONTAINER ID
 ```
@@ -145,7 +146,6 @@ $ sudo docker ps
 ```
 
 ![container Screenshot](container.jpg)
-
 
 
 
@@ -162,7 +162,7 @@ The logs should look like below:
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
-![Console Screenshot](console.jpg)
+![Console Screenshot](configcomplete.jpg)
 
 
 
