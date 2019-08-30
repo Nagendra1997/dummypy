@@ -124,23 +124,20 @@ You need to specify the app token which needs to be run on-premise,to the mesibo
 
 In the below command Replace APP_TOKEN with the your app token that you got from console and then run it.
 
-```
-docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
+```bash
+$ docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo APP_TOKEN
 ```
 
 
 
 The logs can be read using the following command 
-where CONTAINER is the container ID
+```bash
+$ docker logs CONTAINER ID
 ```
-docker logs CONTAINER
-```
-
 
 To get the container ID use 
-```
-docker ps
-
+```bash
+$ docker ps
 ```
 
 ![container Screenshot](container.jpg)
@@ -185,7 +182,6 @@ Turn on the on-premise switch and your app will be connected to your data center
 That's it ! You are now up with mesibo running on your own server.
 
 
-
 ## Step 7 - Firewall
 
 
@@ -206,7 +202,7 @@ On demand instance of Mesibo can be easily created on the cloud providers such a
 
 You can use the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
 
-```
+```bash
 $ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
 
 $ chmod a+x install.sh
@@ -216,7 +212,7 @@ $ sudo ./install.sh
 ```
 You can run a C++ test file to send and recieve messages and troubleshoot your on premise installation.
 
-```
+```bash
 $ g++ test.cpp -o testmesibo -lmesibo64
 $ ./testmesibo
 
@@ -224,7 +220,7 @@ $ ./testmesibo
 
 If you prefer to customise your installation using a configuration file you may edit the file at /var/log/mesibo/mesibo.conf and run a configuration update script.
 
-```
+```bash
 $ chmod a+x mesibo_config.sh
 
 $ sudo ./mesibo_config.sh
@@ -232,13 +228,14 @@ $ sudo ./mesibo_config.sh
 ```
 
 
-## FAQ
+## FAQ / Troubleshooting
+
 For a more detailed FAQ section on On Premise [refer](https://mesibo.com/documentation/faq/)
 
 ## I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
 
 You can check the logs for your server using 
-```
+```bash
 docker logs CONTAINER ID 
 ```
 When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
