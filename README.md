@@ -97,9 +97,8 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
-<blockquote>
->	Warning:
->	Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
+
+>Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
 
 ![On Premise Off](screenshots/enable-off.jpg)
@@ -135,7 +134,8 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
 
 ## Step 5 - Run Mesibo
-Before running mesibo docker image, please ensure that you have configured it in mesibo console.
+> Warning : Before running mesibo docker image, please ensure that you have configured it in mesibo console.
+
 ![Config Complete](screenshots/config-not-running.jpg)
 
 
@@ -178,13 +178,12 @@ If your on-premise server is setup properly continue with the next step , else r
 
 
 ## Step 6 - Enable On-Premise
-:warning::warning::warning:
-
-DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
+> Warning :
+>DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
 ![Enable On-Premise screenshot](screenshots/config-running.jpg)
 
-Before Enabling the On-Premise switch ensure that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
+>Before Enabling the On-Premise switch ensure that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
 
 
 ![Enable On-Premise screenshot](screenshots/enable-on.jpg)
