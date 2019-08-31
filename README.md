@@ -86,7 +86,7 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
-![Hello World](screenshots/helloworld.jpg)
+![Hello World](screenshots/hello-world.jpg)
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise server by running the following command
@@ -98,7 +98,7 @@ However, before we launch Mesibo, we need to setup mesibo configuration in the c
 
 ## Step 3 - Configure Mesibo
 :warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
-![On Premise Off](enableoff.jpg)
+![On Premise Off](screenshots/enable-off.jpg)
 
 Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
 
@@ -106,7 +106,7 @@ Mesibo requires following configuration:
 
 - Mesibo App Token, which you can get from Mesibo Console
 
-![App token Mesibo Console](app-token.jpg)
+![App token Mesibo Console](screenshots/app-token.jpg)
 
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
 
@@ -114,7 +114,7 @@ Mesibo requires following configuration:
 
 - TLS/SSL Cerificate for your hostname [Optional but recommended]
 
-![Console Screenshot](console.jpg)
+![Console Screenshot](screenshots/config-start.jpg)
 
 Also, note that there is a configuration setting available to direct mesibo in case of premise issues. If you 'enable Auto fallback to cloud'  mesibo will connect to cloud service if your premise/datacenter having issues. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
 
@@ -132,7 +132,7 @@ You can use any existing ceriticate, OR Letsencrypt which is a free service OR a
 
 ## Step 5 - Run Mesibo
 Before running mesibo docker image, please ensure that you have configured it in mesibo console.
-![Config Complete](not_running.jpg)
+![Config Complete](screenshots/config-not-running.jpg)
 
 
 Run mesibo :
@@ -145,11 +145,11 @@ $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 
 You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
 The app token can be obtained from mesibo console 
 
-![App token Mesibo Console](token.jpg)
+![App token Mesibo Console](screenshots/token.jpg)
 
 ON sucessfull start of Mesibo ,the output log should look like below:
 
-![Logs Screenshot](logs.jpg)
+![Logs Screenshot](screenshots/logs.jpg)
 
 Alternatively, you can view logs using
 ```bash
@@ -166,7 +166,7 @@ If your logs contain any errors indicating failure to start Mesibo refer to [tro
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
 
-![Enable On-Premise screenshot](configrunning.jpg)
+![Enable On-Premise screenshot](screenshots/config-running.jpg)
 
 
 If your on-premise server is setup properly continue with the next step , else refer to [troubleshooting](mesibo.com)
@@ -178,12 +178,12 @@ If your on-premise server is setup properly continue with the next step , else r
 
 DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
-![Enable On-Premise screenshot](configrunning.jpg)
+![Enable On-Premise screenshot](screenshots/config-running.jpg)
 
 Before Enabling the On-Premise switch ensure that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
 
 
-![Enable On-Premise screenshot](enableon.jpg)
+![Enable On-Premise screenshot](screenshots/enable-on.jpg)
 
 Turn on the on-premise switch and your app will be connected to your data center immediately. If a user logs into your application connected to Mesibo On-Premise your server logs should output
 
