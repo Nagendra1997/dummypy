@@ -240,6 +240,12 @@ $ ./testmesibo
 
 For a more detailed FAQ section on On Premise [refer](https://mesibo.com/documentation/faq/)
 
+## I am currently using Mesibo Cloud services. If I enable on-premise how long will it take to switch connection to my server?
+As soon you enable on-premise in the console, your application will get connected to your server. Please ensure that you have made the necessary configuration in the console and the running status displays your hostname before you enable On-Premise.
+
+## Can I switch connection from Mesibo On-Premise back to Mesibo Cloud Service ? 
+Yes, if you would like to completely stop connecting to your on-premise server ,stop your docker container which is running mesibo and disable On-Premise in the console .Your application will now get connected to Mesibo Cloud. 
+
 ## I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
 
 You can check the logs for your server using 
@@ -252,13 +258,12 @@ When a user on your app logs in , you'll get a login entry for that user. For fu
 Please make sure in your console that the Running status for your server is up before enabling on premise. If your server is not running and you have enabled on premise your app will not be able to connect with mesibo and your users will fail to get your service.
 
 ## What happens if my server disconnects due to a network issue while hosting on premise? 
-In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
+In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled, your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
 
-## I am currently using mesibo Cloud services. If I enable on-premise how long will it take to switch connection to my server?
-As soon you enable on-premise your application will get connected to Mesibo running on your server.
 
-## (Needs review )What happens if I am connected to my server and disable On-Premise from console?
-Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.However,it will switch to your server as soon as you enable on-premise.
+## What happens if I am connected to my server and disable On-Premise from console?
+Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .However,it will redirect connection  to your server as soon as you enable on-premise. 
+
 
 ## Can I deploy mesibo on a custom cloud service provider?
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
