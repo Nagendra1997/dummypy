@@ -3,9 +3,11 @@ description: Mesibo On-Premise Server
 keywords: open, source, contributing, overview, on-premise
 title: Installing & Running Mesibo On-Premise Server
 ---
-Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is  download Mesibo on-premise server image and run it in your own data center. That's it! 
+Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is download Mesibo On-Premise server image and run it in your own data center. That's it! 
 
-Mesibo On-Premise is the perfect solution for ultimate control over your sensitive data.We have also released the entire source code of Mesibo Android and iOS [sample apps](https://github.com/mesibo/samples) on GitHub, which is continuously updated. You can download the entire source code, and customize it to suit your needs. 
+While our Cloud Service lets you start immediately without installing anything, the On-Premise model offers ultimate flexibility and control over your data, loadable modules, interface with machine learning and AI tools and much more. The pricing remains the same.However,the On-Premise model can work out to be more cost effective as there are no charges other than per active user charges. On the other hand, you pay for bandwidth and storage charges in our cloud offering.
+
+If you do not wish to host Mesibo on your own server infrastructure you have the option of using the Cloud offering by Mesibo.
 
 ### Features
 - All the mesibo features, including Messaging, Voice and Video calling
@@ -15,27 +17,23 @@ Mesibo On-Premise is the perfect solution for ultimate control over your sensiti
 - Private and public deployment
 - Auto fallback to cloud as a backup, if required. 
 - Push notifications
+- Loadable modules and scripting
 - At no additional cost
-
-## On-Premise vs Cloud offering
-You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
-
-If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 
 ### Prerequisites
 It is required that you are familar with:
 
-- mesibo API and successfuly using Mesibo cloud services. If not, please refer to Mesibo 
+- Mesibo API and successfuly using Mesibo cloud services. If not, please refer to  
 [getting started](https://mesibo.com/documentation/get-started/) guide and tutorials before setting up On-Premise server.
 
-- setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
+- Setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
 
-- setting up Docker and using Docker images. If not, refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
+- Although not essential,basic knowledge of setting up Docker and using Docker images wpuld be helpful.You can refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
 
 
 ### Requirements
-Mesibo is extremely simple to setup with On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and rest will be taken care by Mesibo. 
+Mesibo is extremely simple to setup with On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and the rest will be taken care by Mesibo. 
 
 Mesibo only requires the following:
 
@@ -52,19 +50,16 @@ Mesibo only requires the following:
 	- SLES 15
 
 	- Oracles Linux 7.x## On-Premise vs Cloud offering
-You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
-
-If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 - MySQL (or MariaDB) database 
 
-## How Mesibo On-Premise works
-Running Mesibo on your own premise offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more.Please note, there is no change whtasoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
+## Should I recompile my application to work with Mesibo On-Premise?
+Definitely not. There is no change whtasoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
 
-With Mesibo On-Premise when you connect to mesibo, your connection is redirected to your chosen host/server.
-If in any case your On-Premise server fails or has issues then you have the option of falling back to mesibo cloud services.
+With Mesibo On-Premise ,when you connect to mesibo your connection is redirected to your chosen host/server.
+If in any case your On-Premise server has issues, then you have the option of falling back to Mesibo Cloud Services.If you wish not to connect to your On-Premise instance , you can switch back to Mesibo Cloud Services at any time.
 
-To setup Mesibo-On Premise follow these steps:
+## To Setup Mesibo on your premise follow these steps:
 
 ## Step 1 - Install Docker
 Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed Docker on your server, you can skip to Step 2. 
@@ -95,7 +90,11 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
-![Hello World](screenshots/hello-world.jpg)
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+```
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise docker image by running the following command
@@ -122,16 +121,15 @@ Mesibo requires following configuration:
 
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
 
-- Database Information : Database Name,Database Username,Database host , Database Password
+- Database Information : Database Name,Database Username,Database host ,Database Password
 
 - TLS/SSL Cerificate for your hostname [Optional but recommended]
 
 ![Console Screenshot](screenshots/config-start.jpg)
 
-Also, note that there is a configuration setting available to direct mesibo in case of premise issues. If you 'enable Auto fallback to cloud'  mesibo will connect to cloud service if your premise/datacenter having issues. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
+Also, note that there is a configuration setting available to redirect mesibo in case your premise/datacenter is having issues. If you enable - Auto fallback to cloud,  Mesibo will connect your application to Mesibo Cloud Services immediately. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
 
 If you enable Privately Hosted ,no network check will be performed by Mesibo.
-
 
 ## Step 4 - Configure TLS Certificate
 
@@ -144,7 +142,6 @@ You can use any existing ceriticate, OR Letsencrypt which is a free service OR a
 
 ## Step 5 - Run Mesibo
 > Warning : Before running mesibo docker container,Ensure that you have completed all the necessary configuration in the  console.
-
 
 
 ![Config Complete](screenshots/config-not-running.jpg)
@@ -164,19 +161,34 @@ The app token can be obtained from mesibo console
 
 ON sucessfull start of Mesibo ,the output log should look like below:
 
-![Logs Screenshot](screenshots/logs.jpg)
+```
+==1== Using the defaults from __asan_default_options: verbosity=2:disable_coredump=0::unmap_shadow_on_exit=1:abort_on_error=1:log_path=/cores/mesibo.txt
+E3108-082633-388 (1): Unable to open /proc/sys/kernel/core_pattern (truncate 1)
+E3108-082633-480 (1): Mesibo Build: Aug 29 2019 15:39:08
+E3108-082633-506 (1): PID: 1
+E3108-082633-775 (1): Local IP Address: 172.17.0.2
+E3108-082634-580 (10): *** onp_message: On-Premise not enabled - login to Mesibo console to enable it
+E3108-082634-639 (10): Generating TLS certificate for 192.168.0.107
+I3108-082635-167: Starting mesibo
+
+```
 
 You can view logs using
 ```bash
 $ sudo docker logs <CONTAINER_ID>
 ```
 
-To get CONTAINER ID use 
+To the CONTAINER_ID of the docker container you are running use
 	
 ```bash
 $ sudo docker ps
 ```
-If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](mesibo.com)
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                            NAMES
+4fd84018a651        mesibo/mesibo       "/usr/bin/mesibo_onp…"   56 minutes ago      Up 56 minutes       0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:513->513/tcp, 0.0.0.0:4443->4443/tcp, 0.0.0.0:5222->5222/tcp, 0.0.0.0:5228->5228/tcp, 0.0.0.0:5443->5443/tcp   modest_mendeleev
+
+```
+If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](https://mesibo.com)
 
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
@@ -223,7 +235,7 @@ All major cloud service providers support running docker containers. To create a
 
 ## Loading modules and scripts
 
-You can load the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
+You can load modules such as the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) to run on your own premise. 
 
 ```bash
 $ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
@@ -231,13 +243,7 @@ $ chmod a+x install.sh
 $ sudo ./install.sh
 
 ```
-A C++ test file can be used to send and recieve messages.
-
-```bash
-$ g++ test.cpp -o testmesibo -lmesibo64
-$ ./testmesibo
-
-```
+You can also run custom scripts in bash,Python,JavaScript,etc to interface with machine learning ,analytics,etc.
 
 
 ## Troubleshooting & FAQ
@@ -266,7 +272,17 @@ In the case of an issue with your on premise connection, mesibo will try to reco
 
 
 ## What happens if I am connected to my server and disable On-Premise from console?
-Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .However,it will redirect connection  to your server as soon as you enable on-premise. 
+Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If and only if you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .Please note storage charges for Mesibo Cloud Services will then apply and offline messages stored on your server may not be sent. 
+
+However,it will redirect connection to your server as soon as you enable on-premise back again.
+
+If you would like to completely switch back to Mesibo Cloud Services and do not want to connect to your server anymore -- stop your docker container running Mesibo and turn off On-Premise switch in the console. Now,your application will get connected to Mesibo Cloud.
+
+## How can I upadate my Mesibo On-Premise docker image?
+Always ensure that you have the latest version of Mesibo Docker Image running. To update your image run
+```bash
+sudo docker pull mesibo/mesibo
+```
 
 ## How can I stop the docker container running Mesibo?
 Get the CONTAINER_ID of the docker container you are running using
@@ -288,6 +304,14 @@ All major cloud service providers support running docker containers.Please refer
 You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
 Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
 
+## Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
+1.Check your databse host address ,hostname and other details is matching to the details you have entered in console. 
+2.  Please check you have granted the necessary permissions to access your database from your hostname address.
+3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
+4. Stop your docker container and then start it.
+
+## Getting Error: Unable to verify app token - network error in server logs
+Check your firewall configuration and verify it is configured to allow connections from your host server.Then,stop your docker container and then start it.
 
 
 
