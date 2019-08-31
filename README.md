@@ -53,7 +53,7 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
-## Should I recompile my application to work with Mesibo On-Premise?
+### Should I recompile my application to work with Mesibo On-Premise?
 Definitely not. If you already have your applications connected to Mesibo Cloud Service and are successfully using Mesibo API services,you just need to configure your host server and tell Mesibo to redirect your connection to your own server.   
 
 Whether you use Mesibo Cloud Service or setup a dedicated server running Mesibo,there is absolutely no change in the way you use Mesibo APIs or deploy your application. With Mesibo On-Premise you have the added advantage of having control over your data storage and privacy.
@@ -120,20 +120,17 @@ The complete configuration of your Mesibo On-Premise hosting can be done through
 - From console,choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token.
 ![App token Mesibo Console](screenshots/app-token.jpg)
 
-- Go to App Settings -> On-Premise Hosting,which will display all the settings for On-Premise.
+- Go to App Settings →  On-Premise Hosting
 ![Console Screenshot](screenshots/on-premise-settings.jpg)
 
 - In On-Premise settings page you will find two sections: Enable On-Premise and On-Premise Settings. 
-- Enter all the required configuration details for your On-Premise in this section
-
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
+- Enter all the required configuration details for your On-Premise host in the settings section
 
-Mesibo requires following configuration details:
 
-- Mesibo App Token, which you can get from Mesibo Console
 
-![App token Mesibo Console](screenshots/token.jpg)
+Mesibo requires the following configuration details:
 
 - Your Hostname. All your users will connect to this hostname and hence ensure that it is correct.
 
@@ -141,7 +138,7 @@ Mesibo requires following configuration details:
 
 - TLS/SSL Cerificate for your hostname [Optional but recommended]
 
-![Console Screenshot](screenshots/config-start.jpg)
+![Config Complete](screenshots/config-not-running.jpg)
 
 Also, note that there is a configuration setting available to redirect mesibo in case your premise/datacenter is having issues. If you enable - Auto fallback to cloud,  Mesibo will connect your application to Mesibo Cloud Services immediately. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
 
@@ -152,18 +149,18 @@ If you enable Privately Hosted ,no network check will be performed by Mesibo.
 To configure TLS/SSL certificate you need to provide the folder path to the following files :
 cert.pem , chain.pem , privkey.pem
 
-Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by browsers and you may not be able to run Web API based applications.
+Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by many browsers and you may not be able to run Web API based applications.
 
 You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
 
 ## Step 4 - Run Mesibo
-> Warning : Before running mesibo docker container,Ensure that you have completed all the necessary configuration in the  console.
 
+Prior to running Mesibo docker container,ensure that you have completed all the necessary configuration in the console as specified in Step-3. Note ,that the Running Status field displays "Not Running"
 
 ![Config Complete](screenshots/config-not-running.jpg)
 
 
-Run mesibo :
+Run Mesibo :
 
 ```bash
 $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 \
@@ -171,14 +168,19 @@ $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 
 ```
 
 You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
-The app token can be obtained from mesibo console 
+The token  for your application can be obtained from mesibo console as specified in Step-3.
 
 ![App token Mesibo Console](screenshots/token.jpg)
+
+For example,
+```bash
+$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 \
+        -d mesibo/mesibo  iqmr059ms2yopxhc2sayx05ba2l5cralockbicqjsvv1nsqxs0x1yclfv0qvyg1q 
+```
 
 On sucessfull start of Mesibo ,the output log should look like below:
 
 ```
-==1== Using the defaults from __asan_default_options: verbosity=2:disable_coredump=0::unmap_shadow_on_exit=1:abort_on_error=1:log_path=/cores/mesibo.txt
 E3108-082633-388 (1): Unable to open /proc/sys/kernel/core_pattern (truncate 1)
 E3108-082633-480 (1): Mesibo Build: Aug 29 2019 15:39:08
 E3108-082633-506 (1): PID: 1
