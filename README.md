@@ -33,7 +33,7 @@ It is required that you are familar with:
 
 
 ### Requirements
-Mesibo is extremely simple to setup with On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and the rest will be taken care by Mesibo. 
+Mesibo is extremely simple to setup with On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network ,the rest will be taken care by Mesibo. 
 
 Mesibo only requires the following:
 
@@ -58,16 +58,16 @@ Definitely not. If you already have your applications connected to Mesibo Cloud 
 
 Whether you use Mesibo Cloud Service or setup a dedicated server running Mesibo,there is absolutely no change in the way you use Mesibo APIs or deploy your application. With Mesibo On-Premise you have the added advantage of having control over your data storage and privacy.
 
-If in any case your On-Premise server has issues,then you always have the option of falling back to Mesibo Cloud Services.
+If in any case your On-Premise server has issues, you always have the option of falling back to Mesibo Cloud Services.
 
 
 ## Setting up Mesibo-On Premise
 Setting up Mesibo on your own premise is extremely simple and needs only basic configuration on your end. 
-An overview of steps to be followed :
+You just need to follow five simple steps to set-up Mesibo On-Premise :
 	- Install Docker
 	- Download Mesibo On-Premise Server Image
 	- Configure Mesibo
-	- Run Mesibo Container
+	- Run Mesibo 
 	- Enable On-Premise
 
 ## Step 1 - Install Docker
@@ -114,14 +114,16 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
-<Small Para>
-	Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details . All you need is app toke,all from console automatic, no extra config file,etc
+
+Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details . All you need is app toke,all from console automatic, no extra config file,etc
+
+The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). 
+
+- Choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console
+- Go to App Settings. Here you will find all configurations and settings for your application.
 
 
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
-
-
-![On Premise Off](screenshots/enable-off.jpg)
 
 
 Mesibo requires following configuration:
