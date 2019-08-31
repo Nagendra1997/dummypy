@@ -152,19 +152,7 @@ For example,
 ```
 /etc/letsencrypt/live/example.com/cert.pem 
 ```
-Note that, wild card certificate is not recommended. 
-
-### Using Letsencrypt:
-1.Download the Let’s Encrypt client, certbot:
-```
-$ add-apt-repository ppa:certbot/certbot
-```
-2.Install certbot
-```
-$ apt-get update
-$ apt-get install python-certbot-nginx
-```
-
+Note that wild card certificate is not recommended. 
 
 
 ## Step 4 - Run Mesibo
