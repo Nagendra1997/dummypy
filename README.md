@@ -53,7 +53,7 @@ Mesibo only requires the following:
 
 - MySQL (or MariaDB) database 
 
-### Should I recompile my application to work with Mesibo On-Premise?
+## Should I recompile my application to work with Mesibo On-Premise?
 Definitely not. If you already have your applications connected to Mesibo Cloud Service and are successfully using Mesibo API services,you just need to configure your host server and tell Mesibo to redirect your connection to your own server.   
 
 Whether you use Mesibo Cloud Service or setup a dedicated server running Mesibo,there is absolutely no change in the way you use Mesibo APIs or deploy your application. With Mesibo On-Premise you have the added advantage of having control over your data storage and privacy.
@@ -62,13 +62,9 @@ If in any case your On-Premise server has issues, you always have the option of 
 
 
 ## Setting up Mesibo-On Premise
-Setting up Mesibo on your own premise is extremely simple and needs only basic configuration on your end.
-You just need to follow five simple steps to set-up Mesibo On-Premise :
-- Install Docker
-- Download Mesibo On-Premise Server Image
-- Configure Mesibo
-- Run Mesibo 
-- Enable On-Premise
+Setting up Mesibo on your own premise is extremely simple .You only need to provide basic infomation regarding your database and network in the configuration settings from Mesibo console and run Mesibo Server Image by supplying your application token.
+
+Follow the steps below to setup Mesibo On-Premise :
 
 ## Step 1 - Install Docker
 Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed and running Docker on your server, you can skip to Step 2. 
