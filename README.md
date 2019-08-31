@@ -195,7 +195,7 @@ That's it ! You are now up with mesibo running on your own server.
 
 
 ## Step 7 - Firewall
-
+Mesibo supports firewall configuration on your premise .It is recommended to use iptables ,which is the default tool provided in Linux to establish a firewall. If you have configured your network firewall or you prefer to keep your database protected behind a firewall ,you can do it independently.There are no additional changes to be made in the configuration of Mesibo On-Premise .
 
 ## Step 8 - Group Management
 
