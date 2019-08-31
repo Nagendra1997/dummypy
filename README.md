@@ -86,7 +86,7 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
-![Hello World](helloworld.jpg)
+![Hello World](screenshots/helloworld.jpg)
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise server by running the following command
