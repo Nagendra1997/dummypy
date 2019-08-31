@@ -113,17 +113,17 @@ However, before we launch Mesibo, we need to setup mesibo configuration in the c
 
 The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). All the configuration settings for your server will be automatically handled by Mesibo.There is no need to supply any extra configuration file on your server.   
 
-- From console,choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token. You need to supply this app token to run Mesibo Server Image in Step-4.
+1. From console,choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token. You need to supply this app token to run Mesibo Server Image in Step-4.
 ![App token Mesibo Console](screenshots/app-token.jpg)
 
-- Go to App Settings →  On-Premise Hosting
+2. Go to App Settings →  On-Premise Hosting
 ![Console Screenshot](screenshots/on-premise-settings.jpg)
 
-- In On-Premise settings page you will find two sections: Enable On-Premise and On-Premise Settings. 
+3. In On-Premise settings page you will find two sections: Enable On-Premise and On-Premise Settings. 
 
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
-- Enter all the required configuration details for your On-Premise host in the settings section
+4. Enter all the required configuration details for your On-Premise host in the settings section
 
 
 Mesibo requires the following configuration details:
@@ -136,18 +136,29 @@ Mesibo requires the following configuration details:
 
 ![Config Complete](screenshots/config-not-running.jpg)
 
-Also, note that there is a configuration setting available to redirect mesibo in case your premise/datacenter is having issues. If you enable - Auto fallback to cloud,  Mesibo will connect your application to Mesibo Cloud Services immediately. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
+There is a configuration setting available to redirect mesibo in case your premise/datacenter is having issues. If you enable - Auto fallback to cloud,  Mesibo will connect your application to Mesibo Cloud Services immediately. However,any offline messages stored on your premise maynot be delivered. Storage/bandwidth charges will apply.
 
-If you enable Privately Hosted ,no network check will be performed by Mesibo.
+Also,if you enable Privately Hosted ,no network check will be performed by Mesibo.
 
 ### Configuring TLS Certificate
 
-To configure TLS/SSL certificate you need to provide the folder path to the following files :
-cert.pem , chain.pem , privkey.pem
+SSL/TLS encryption of your host leads to better security for your users.To configure TLS/SSL certificate you need to provide the folder path to the following files :
+```
+cert.pem 
+chain.pem 
+privkey.pem
+```
+For example,
 
 Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by many browsers and you may not be able to run Web API based applications.
 
-You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
+You can use any existing ceriticate, OR [Letsencrypt](https://letsencrypt.org/) which is a free service OR any other provides of your choice to get a secure ceritificate. In this case you can just provide the path to your certificate.
+For example,
+```
+/etc/letsencrypt/live/example.com/cert.pem 
+```
+
+Note that, wild card certificate is not recommended. 
 
 ## Step 4 - Run Mesibo
 
