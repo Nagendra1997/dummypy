@@ -29,7 +29,7 @@ It is required that you are familar with:
 
 - Setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
 
-- Although not essential,basic knowledge of setting up Docker and using Docker images would be helpful.You can refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
+- Although not essential, basic knowledge of setting up Docker and using Docker images would be helpful.You can refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
 
 
 ### Requirements
@@ -64,8 +64,11 @@ If in any case your On-Premise server has issues,then you always have the option
 ## Setting up Mesibo-On Premise
 Setting up Mesibo on your own premise is extremely simple and needs only basic configuration on your end. 
 An overview of steps to be followed :
--Install Docker
--
+	- Install Docker
+	- Download Mesibo On-Premise Server Image
+	- Configure Mesibo
+	- Run Mesibo Container
+	- Enable On-Premise
 
 ## Step 1 - Install Docker
 Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed and running Docker on your server, you can skip to Step 2. 
@@ -139,7 +142,7 @@ Also, note that there is a configuration setting available to redirect mesibo in
 
 If you enable Privately Hosted ,no network check will be performed by Mesibo.
 
-## Step 4 - Configure TLS Certificate
+### Configuring TLS Certificate
 
 To configure TLS/SSL certificate you need to provide the folder path to the following files :
 cert.pem , chain.pem , privkey.pem
@@ -148,7 +151,7 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 
 You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
 
-## Step 5 - Run Mesibo
+## Step 4 - Run Mesibo
 > Warning : Before running mesibo docker container,Ensure that you have completed all the necessary configuration in the  console.
 
 
@@ -167,7 +170,7 @@ The app token can be obtained from mesibo console
 
 ![App token Mesibo Console](screenshots/token.jpg)
 
-ON sucessfull start of Mesibo ,the output log should look like below:
+On sucessfull start of Mesibo ,the output log should look like below:
 
 ```
 ==1== Using the defaults from __asan_default_options: verbosity=2:disable_coredump=0::unmap_shadow_on_exit=1:abort_on_error=1:log_path=/cores/mesibo.txt
@@ -208,7 +211,7 @@ If your on-premise server is setup properly continue with the next step , else r
 
 
 
-## Step 6 - Enable On-Premise
+## Step 5 - Enable On-Premise
 > Warning :
 >DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
@@ -228,7 +231,7 @@ Turn on the on-premise switch and your app will be connected to your data center
 That's it ! You are now up with mesibo running on your own server.
 
 
-## Step 7 - Firewall
+## Firewall Settings
 Mesibo supports firewall configuration on your premise .It is recommended to use iptables ,which is the default tool provided in Linux to establish a firewall. If you have configured your network firewall or you prefer to keep your database protected behind a firewall ,you can do it independently.There are no additional changes to be made in the configuration of Mesibo On-Premise .
 
 
@@ -251,7 +254,7 @@ $ chmod a+x install.sh
 $ sudo ./install.sh
 
 ```
-You can also run custom scripts in bash,Python,JavaScript,etc to interface with machine learning ,analytics,etc.
+You can also run your scripts in bash,Python,JavaScript,MATLAB,etc to interface your application with machine learning ,analytics and scientific computing modules.
 
 
 ## Troubleshooting & FAQ
