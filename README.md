@@ -97,7 +97,10 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
-:warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
+:warning:
+<blockquote>
+	> Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
+</blockquote>
 ![On Premise Off](screenshots/enable-off.jpg)
 
 Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
