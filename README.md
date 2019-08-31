@@ -62,7 +62,7 @@ If in any case your On-Premise server has issues, you always have the option of 
 
 
 ## Setting up Mesibo-On Premise
-Setting up Mesibo on your own premise is extremely simple and needs only basic configuration on your end. 
+Setting up Mesibo on your own premise is extremely simple and needs only basic configuration on your end.
 You just need to follow five simple steps to set-up Mesibo On-Premise :
 	- Install Docker
 	- Download Mesibo On-Premise Server Image
@@ -115,12 +115,11 @@ However, before we launch Mesibo, we need to setup mesibo configuration in the c
 
 ## Step 3 - Configure Mesibo
 
-Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details . All you need is app toke,all from console automatic, no extra config file,etc
-
-The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). 
+The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). All the configuration settings for your server will be automatically handled by Mesibo.There is no need to supply any extra configuration file on your server.   
 
 - Choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console
-- Go to App Settings. Here you will find all configurations and settings for your application.
+- Go to App Settings. Here you will find all configurations and settings for your application. Click on On-Premise Hosting,which will display the settings for On-Premise
+-
 
 
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
