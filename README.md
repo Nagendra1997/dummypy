@@ -171,12 +171,12 @@ You can view logs using
 $ sudo docker logs <CONTAINER_ID>
 ```
 
-To get CONTAINER ID use 
+To the CONTAINER_ID of the docker container you are running use
 	
 ```bash
 $ sudo docker ps
 ```
-If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](mesibo.com)
+If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](https://mesibo.com)
 
 Now, check Running status of your server from Mesibo  console → App Settings → On Premise Hosting. If successfull the running status field will contain your hostname , otherwise it will contain "Not running"
 
