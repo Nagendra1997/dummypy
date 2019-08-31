@@ -54,7 +54,7 @@ Mesibo only requires the following:
 - MySQL (or MariaDB) database 
 
 ## Should I recompile my application to work with Mesibo On-Premise?
-Definitely not. There is no change whtasoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
+Definitely not. There is no change whatsoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
 
 With Mesibo On-Premise ,when you connect to mesibo your connection is redirected to your chosen host/server.
 If in any case your On-Premise server has issues, then you have the option of falling back to Mesibo Cloud Services.If you wish not to connect to your On-Premise instance , you can switch back to Mesibo Cloud Services at any time.
