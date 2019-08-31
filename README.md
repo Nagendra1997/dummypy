@@ -29,7 +29,7 @@ It is required that you are familar with:
 
 - Setting up a Linux server and MySQL database. If not, refer to online tutorials for the Linux distribution of your choice. 
 
-- Although not essential,basic knowledge of setting up Docker and using Docker images wpuld be helpful.You can refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
+- Although not essential,basic knowledge of setting up Docker and using Docker images would be helpful.You can refer to [Docker documentation](https://docs.docker.com) and various online tutorials on docker. 
 
 
 ### Requirements
