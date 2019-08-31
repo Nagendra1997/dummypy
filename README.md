@@ -113,17 +113,17 @@ However, before we launch Mesibo, we need to setup mesibo configuration in the c
 
 The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). All the configuration settings for your server will be automatically handled by Mesibo.There is no need to supply any extra configuration file on your server.   
 
-- From console,choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token.
+- From console,choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token. You need to supply this app token to run Mesibo Server Image in Step-4.
 ![App token Mesibo Console](screenshots/app-token.jpg)
 
 - Go to App Settings →  On-Premise Hosting
 ![Console Screenshot](screenshots/on-premise-settings.jpg)
 
 - In On-Premise settings page you will find two sections: Enable On-Premise and On-Premise Settings. 
+
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
 - Enter all the required configuration details for your On-Premise host in the settings section
-
 
 
 Mesibo requires the following configuration details:
@@ -152,8 +152,6 @@ You can use any existing ceriticate, OR Letsencrypt which is a free service OR a
 ## Step 4 - Run Mesibo
 
 Prior to running Mesibo docker container,ensure that you have completed all the necessary configuration in the console as specified in Step-3. Note ,that the Running Status field displays "Not Running"
-
-![Config Complete](screenshots/config-not-running.jpg)
 
 
 Run Mesibo :
