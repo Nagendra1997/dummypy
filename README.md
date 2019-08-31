@@ -29,7 +29,7 @@ It is required that you are familar with:
 
 
 ### Requirements
-Mesibo made it extremely simple for you to setup an On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and rest will be taken care by Mesibo. 
+Mesibo is extremely simple to setup with On-Premise Messaging, Voice and Video call server. You only need to provide bare minimum infomation regarding your setup and network and rest will be taken care by Mesibo. 
 
 Mesibo only requires the following:
 
