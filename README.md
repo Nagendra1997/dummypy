@@ -254,7 +254,7 @@ Yes, if you would like to completely stop connecting to your on-premise server ,
 
 You can check the logs for your server using 
 ```bash
-docker logs CONTAINER ID 
+sudo docker logs CONTAINER ID 
 ```
 When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
 
@@ -268,9 +268,20 @@ In the case of an issue with your on premise connection, mesibo will try to reco
 ## What happens if I am connected to my server and disable On-Premise from console?
 Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .However,it will redirect connection  to your server as soon as you enable on-premise. 
 
+## How can I stop the docker container running Mesibo?
+Get the CONTAINER_ID of the docker container you are running using
+```
+sudo docker ps
+```
+Now,to stop this container use
+```
+sudo docker stop <CONTAINER_ID>
+```
+
 
 ## Can I deploy mesibo on a custom cloud service provider?
 On demand instance of Mesibo can be easily created on the cloud providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc
+
 
 
 ## I am confused between On-Premise vs Cloud offering, Which one is better?
