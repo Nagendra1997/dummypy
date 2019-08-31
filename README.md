@@ -145,13 +145,27 @@ Also,if you enable Privately Hosted ,no network check will be performed by Mesib
 SSL/TLS encryption of your host leads to better security for your users.To configure TLS/SSL certificate you need to provide the folder path containing your certificate.
 Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by many browsers and you may not be able to run Web API based applications.
 
-You can use any existing ceriticate, OR [Letsencrypt](https://letsencrypt.org/) which is a free service OR any other provides of your choice to get a secure ceritificate. In this case you can just provide the path to your certificate.
+You can use any existing ceriticate, OR [Letsencrypt](https://letsencrypt.org/) which is a free service OR any other provides of your choice to get a secure ceritificate. 
+
+In this case you can just provide the path to your certificate.
 For example,
 ```
 /etc/letsencrypt/live/example.com/cert.pem 
 ```
-
 Note that, wild card certificate is not recommended. 
+
+### Using Letsencrypt:
+1.Download the Let’s Encrypt client, certbot:
+```
+$ add-apt-repository ppa:certbot/certbot
+```
+2.Install certbot
+```
+$ apt-get update
+$ apt-get install python-certbot-nginx
+```
+
+
 
 ## Step 4 - Run Mesibo
 
@@ -220,7 +234,6 @@ If your on-premise server is setup properly continue with the next step , else r
 > Warning :
 >DO NOT enable On-Premise unless you have read the documentation, hosted Mesibo on your own premise and you can see your hostname correctly in the 'Running Status' field below. As soon as you turn ON the on-premise switch, mesibo cloud will stop serving your users and they will be redirected to your own data center. If Mesibo on-premise server is not running on your data-center, your users will not be able to connect.
 
-![Enable On-Premise screenshot](screenshots/config-running.jpg)
 
 >Before Enabling the On-Premise switch ensure that your on-premise server is running and verify that in your On-Premise hosting console the Running Status field contains your hostname.
 
