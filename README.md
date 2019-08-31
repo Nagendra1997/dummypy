@@ -260,7 +260,8 @@ All major cloud service providers support running docker containers. To create a
 - [Google Cloud](https://cloud.google.com/run/docs/deploying)
 
 ## Group Management
-
+Since the complete database is hosted on your server, you can control all the configuration needed for groups. Each group 
+created will have a 'gid' OR Group ID linked assigned to it. The group tables shall contain information to each of the associated group IDs and the group membership table can record which users belong to which groups.
 
 ## Loading modules and scripts
 
