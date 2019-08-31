@@ -134,7 +134,9 @@ Although Mesibo can automatically generate a self-signed certificate for you, it
 You can use any existing ceriticate, OR Letsencrypt which is a free service OR any other provides of your choice to get a secure ceritificate.Note that, wild card certificate is not recommended. 
 
 ## Step 5 - Run Mesibo
-> Warning : Before running mesibo docker image, please ensure that you have configured it in mesibo console.
+> Warning : Before running mesibo docker image,Ensure that you have configured it in mesibo console.
+
+
 
 ![Config Complete](screenshots/config-not-running.jpg)
 
