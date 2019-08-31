@@ -266,7 +266,11 @@ In the case of an issue with your on premise connection, mesibo will try to reco
 
 
 ## What happens if I am connected to my server and disable On-Premise from console?
-Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .However,it will redirect connection  to your server as soon as you enable on-premise. 
+Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If and only if you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .Please note storage charges for Mesibo Cloud Services will then apply and offline messages stored on your server may not be sent. 
+
+However,it will redirect connection to your server as soon as you enable on-premise back again.
+
+If you would like to completely switch back to Mesibo Cloud Services and do not want to connect to your server anymore -- stop your docker container running Mesibo and turn off On-Premise switch in the console. Now,your application will get connected to Mesibo Cloud.
 
 ## How can I stop the docker container running Mesibo?
 Get the CONTAINER_ID of the docker container you are running using
