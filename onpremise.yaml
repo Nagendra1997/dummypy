@@ -1,0 +1,87 @@
+
+I am currently using Mesibo Cloud services. If I enable on-premise how long will it take to switch connection to my server?: |
+        As soon you enable on-premise in the console, your application will get connected to your server. Please ensure that you have made the necessary configuration in the console and the running status displays your hostname before you enable On-Premise.
+
+Can I switch connection from Mesibo On-Premise back to Mesibo Cloud Service : | 
+Yes, if you would like to completely stop connecting to your on-premise server ,stop your docker container which is running mesibo and disable On-Premise in the console .Your application will now get connected to Mesibo Cloud. 
+
+I have enabled On-Premise and my server is running, how do I know if my app is connected to my server? : |
+
+You can check the logs for your server using 
+```bash
+sudo docker logs CONTAINER ID 
+```
+When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
+
+What happens if I have enabled on premise and my server is not running? : |
+Please make sure in your console that the Running status for your server is up before enabling on premise. If your server is not running and you have enabled on premise your app will not be able to connect with mesibo and your users will fail to get your service.
+
+What happens if my server disconnects due to a network issue while hosting on premise? : | 
+In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have [fall back to cloud] option enabled, your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
+
+
+What happens if I am connected to my server and disable On-Premise from console? : |
+Mesibo will try to reconnect to your server and after a few retries it will connect to Mesibo Cloud service.If and only if you have enabled fall back to cloud in your configuration settings,Mesibo will switch to cloud .Please note storage charges for Mesibo Cloud Services will then apply and offline messages stored on your server may not be sent. 
+
+However,it will redirect connection to your server as soon as you enable on-premise back again.
+
+If you would like to completely switch back to Mesibo Cloud Services and do not want to connect to your server anymore -- stop your docker container running Mesibo and turn off On-Premise switch in the console. Now,your application will get connected to Mesibo Cloud.
+
+How can I upadate my Mesibo On-Premise docker image? : |
+Always ensure that you have the latest version of Mesibo Docker Image running. To update your image run
+```bash
+sudo docker pull mesibo/mesibo
+```
+
+How can I stop the docker container running Mesibo? : |
+Get the CONTAINER_ID of the docker container you are running using
+```
+sudo docker ps
+```
+Now,to stop this container use
+```
+sudo docker stop <CONTAINER_ID>
+```
+
+
+Can I run Mesibo on a cloud service provider? : |
+All major cloud service providers support running docker containers.Please refer to respective documentation for different providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc . For running Mesibo Docker Container follow the steps [here](https://mesibo.com)
+
+
+
+I am confused between On-Premise vs Cloud offering, Which one is better? : |
+You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
+Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
+
+ Getting Error MySQL Connection Failed -- Can't connect to MySQL server in server logs : | 
+1.Check your databse host address ,hostname and other details is matching to the details you have entered in console. 
+2.  Please check you have granted the necessary permissions to access your database from your hostname address.
+3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
+4. Stop your docker container and then start it.
+
+
+ Getting Error Unable to verify app token -- network error in server logs : | 
+  Check your firewall configuration and verify it is configured to allow connections from your host server.Then,stop your docker container and then start it.
+
+Where are your servers located?: |
+  Our servers are located in the EU, US, and Asia. Users will be automatically connected to the nearest location. However, if you require that your users connect through a certain region only, for example, EU, it can be set up.Also, with Mesibo On-Premise Offering you can set up your server anywhere yo want and run Mesibo On it.
+
+Due to GDPR, can you guarantee that the location of the server is in the EU?: |
+  Yes, we can offer you servers located in Germany.You can also use the Mesibo On-Premise offering to host your server at any location and run Mesibo on it. 
+
+If I do not wish to use On Premise what kind of cloud service does Mesibo Offer : |
+  Mesibo is built on a highly resilient globally distributed platform spread across three core sites, Asia, Europe, and the United States. These core sites are supported by local relay agents.  All the core sites run hot-swappable servers with enterprise-grade Linux on latest Intel Xeon processors, to perform a variety of tasks like message routing, call processing, relay agents.
+
+What kind of reliability Mesibo Cloud Infrastructure offers?: |
+  Server failures are catastrophic to your business operations. Mesibo's highly redundant design has all the servers in M+N redundancy and hot-swappable. This allows other servers to redistribute traffic if one or more server fails.
+
+  In the unlikely event of a failure at a core site, platform's geographical redundancy design to route traffic through the other core ensuring reliable service to all our user.
+
+  The platform is highly secure and supports end-to-end encryption so that any data flowing through servers are only decryptable by parties it is intended for.
+
+
+Will Mesibo provide necessary security requirements for on-premise?: |
+
+
+What is the cost for on-premise and how billing is changed compared to cloud solution?: |
+
