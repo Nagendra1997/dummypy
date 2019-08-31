@@ -3,11 +3,11 @@ description: Mesibo On-Premise Server
 keywords: open, source, contributing, overview, on-premise
 title: Installing & Running Mesibo On-Premise Server
 ---
-Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is  download Mesibo On-Premise server image and run it in your own data center. That's it! 
+Mesibo On-Premise solution allows you to run the entire Mesibo solution in your own premise / data center. All the messages and calls goes through your own data center and stay in your own database. All you have to do is download Mesibo On-Premise server image and run it in your own data center. That's it! 
 
-While our Cloud Service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
+While our Cloud Service lets you start immediately without installing anything, the On-Premise model offers ultimate flexibility and control over your data, loadable modules, interface with machine learning and AI tools and much more. The pricing remains the same.However,the On-Premise model can work out to be more cost effective as there are no charges other than per active user charges. On the other hand, you pay for bandwidth and storage charges in our cloud offering.
 
-If you do not wish to host Mesibo on your own server infrastructure you have the option of using the cloud offering by Mesibo.
+If you do not wish to host Mesibo on your own server infrastructure you have the option of using the Cloud offering by Mesibo.
 
 ### Features
 - All the mesibo features, including Messaging, Voice and Video calling
@@ -17,9 +17,8 @@ If you do not wish to host Mesibo on your own server infrastructure you have the
 - Private and public deployment
 - Auto fallback to cloud as a backup, if required. 
 - Push notifications
-- Loadable module and scripting
+- Loadable modules and scripting
 - At no additional cost
-
 
 
 ### Prerequisites
@@ -217,7 +216,7 @@ All major cloud service providers support running docker containers. To create a
 
 ## Loading modules and scripts
 
-You can load the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) module to troubleshoot your on-premise deployment.
+You can load modules such as the [Mesibo C/C++ shared library](https://github.com/mesibo/libmesibo) to run on your own premise. 
 
 ```bash
 $ curl -fsSL https://raw.githubusercontent.com/mesibo/libmesibo/master/install.sh 
@@ -225,13 +224,7 @@ $ chmod a+x install.sh
 $ sudo ./install.sh
 
 ```
-A C/C++ test file can be used to send and recieve messages.
-
-```bash
-$ g++ test.cpp -o testmesibo -lmesibo64
-$ ./testmesibo
-
-```
+You can also run custom scripts in bash,Python,JavaScript,etc to interface with machine learning ,analytics,etc.
 
 
 ## Troubleshooting & FAQ
