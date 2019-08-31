@@ -117,7 +117,7 @@ However, before we launch Mesibo, we need to setup mesibo configuration in the c
 
 The complete configuration of your Mesibo On-Premise hosting can be done through [Mesibo Console](https://mesibo.com/console/). All the configuration settings for your server will be automatically handled by Mesibo.There is no need to supply any extra configuration file on your server.   
 
-- Choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console
+- Choose the application you want to connect with your On-Premise host from the 'MY APPLICATIONS' section in the console and make note of the app token.
 - Go to App Settings. Here, you will find all configurations and settings for your application. 
 - Click on On-Premise Hosting,which will display the settings for On-Premise
 - In On-Premise settings page you will find two sections: Enable On-Premise and On-Premise Settings. 
@@ -126,7 +126,7 @@ The complete configuration of your Mesibo On-Premise hosting can be done through
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
 
-Mesibo requires following configuration:
+Mesibo requires following configuration details:
 
 - Mesibo App Token, which you can get from Mesibo Console
 
