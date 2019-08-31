@@ -17,6 +17,12 @@ Mesibo On-Premise is the perfect solution for ultimate control over your sensiti
 - Push notifications
 - At no additional cost
 
+## On-Premise vs Cloud offering
+You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
+
+If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
+
+
 ### Prerequisites
 It is required that you are familar with:
 
@@ -45,7 +51,10 @@ Mesibo only requires the following:
 
 	- SLES 15
 
-	- Oracles Linux 7.x
+	- Oracles Linux 7.x## On-Premise vs Cloud offering
+You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
+
+If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 - MySQL (or MariaDB) database 
 
@@ -144,8 +153,8 @@ You can use any existing ceriticate, OR Letsencrypt which is a free service OR a
 Run mesibo :
 
 ```bash
-$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 
--d mesibo/mesibo <APP_TOKEN>
+$ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 \
+        -d mesibo/mesibo  <APP_TOKEN>
 ```
 
 You need to specify the APP_TOKEN which needs to be run on-premise,to the mesibo instance.
@@ -202,20 +211,14 @@ That's it ! You are now up with mesibo running on your own server.
 ## Step 7 - Firewall
 Mesibo supports firewall configuration on your premise .It is recommended to use iptables ,which is the default tool provided in Linux to establish a firewall. If you have configured your network firewall or you prefer to keep your database protected behind a firewall ,you can do it independently.There are no additional changes to be made in the configuration of Mesibo On-Premise .
 
-## Step 8 - Group Management
-
-
-
-## On-Premise vs Cloud offering
-You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
-
-If you do not wish to host mesibo on your own server/infratructure you are free to use the cloud offering by Mesibo.
 
 ## Deploying with a cloud service provider
 All major cloud service providers support running docker containers. To create an on demand instance of Mesibo in the cloud, refer to respective documentation on running docker containers :
 - [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/) 
 - [Azure](https://azure.microsoft.com/en-us/services/container-instances/) 
 - [Google Cloud](https://cloud.google.com/run/docs/deploying)
+
+## Group Management
 
 
 ## Loading modules and scripts
@@ -236,7 +239,8 @@ $ ./testmesibo
 
 ```
 
-## FAQ / Troubleshooting
+
+## Troubleshooting & FAQ
 
 For a more detailed FAQ section on On Premise [refer](https://mesibo.com/documentation/faq/)
 
