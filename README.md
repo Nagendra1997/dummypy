@@ -166,7 +166,7 @@ ON sucessfull start of Mesibo ,the output log should look like below:
 
 ![Logs Screenshot](screenshots/logs.jpg)
 
-Alternatively, you can view logs using
+You can view logs using
 ```bash
 $ sudo docker logs <CONTAINER_ID>
 ```
