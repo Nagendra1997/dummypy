@@ -89,7 +89,7 @@ $ sudo docker run hello-world
 ![Hello World](screenshots/hello-world.jpg)
 
 ## Step 2 - Download Mesibo On-Premise Server Image
-Download Mesibo On-Premise server by running the following command
+Download Mesibo On-Premise docker image by running the following command
 
 ```
 $ sudo docker pull mesibo/mesibo
