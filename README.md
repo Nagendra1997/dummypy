@@ -90,7 +90,11 @@ Once the installation is over, you can verify it by running
 ```
 $ sudo docker run hello-world
 ```
-![Hello World](screenshots/hello-world.jpg)
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+```
 
 ## Step 2 - Download Mesibo On-Premise Server Image
 Download Mesibo On-Premise docker image by running the following command
@@ -157,7 +161,17 @@ The app token can be obtained from mesibo console
 
 ON sucessfull start of Mesibo ,the output log should look like below:
 
-![Logs Screenshot](screenshots/logs.jpg)
+```
+==1== Using the defaults from __asan_default_options: verbosity=2:disable_coredump=0::unmap_shadow_on_exit=1:abort_on_error=1:log_path=/cores/mesibo.txt
+E3108-082633-388 (1): Unable to open /proc/sys/kernel/core_pattern (truncate 1)
+E3108-082633-480 (1): Mesibo Build: Aug 29 2019 15:39:08
+E3108-082633-506 (1): PID: 1
+E3108-082633-775 (1): Local IP Address: 172.17.0.2
+E3108-082634-580 (10): *** onp_message: On-Premise not enabled - login to Mesibo console to enable it
+E3108-082634-639 (10): Generating TLS certificate for 192.168.0.107
+I3108-082635-167: Starting mesibo
+
+```
 
 You can view logs using
 ```bash
@@ -168,6 +182,11 @@ To the CONTAINER_ID of the docker container you are running use
 	
 ```bash
 $ sudo docker ps
+```
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                            NAMES
+4fd84018a651        mesibo/mesibo       "/usr/bin/mesibo_onp…"   56 minutes ago      Up 56 minutes       0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 0.0.0.0:513->513/tcp, 0.0.0.0:4443->4443/tcp, 0.0.0.0:5222->5222/tcp, 0.0.0.0:5228->5228/tcp, 0.0.0.0:5443->5443/tcp   modest_mendeleev
+
 ```
 If your logs contain any errors indicating failure to start Mesibo refer to [troubleshooting](https://mesibo.com)
 
