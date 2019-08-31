@@ -145,7 +145,7 @@ Also,if you enable Privately Hosted ,no network check will be performed by Mesib
 SSL/TLS encryption of your host leads to better security for your users.To configure TLS/SSL certificate you need to provide the folder path containing your certificate.
 Although Mesibo can automatically generate a self-signed certificate for you, it is recommended that you configure a valid certificate. Self-signed certificate is not considered valid by many browsers and you may not be able to run Web API based applications.
 
-You can use any existing ceriticate, OR [Letsencrypt](https://letsencrypt.org/) which is a free service OR any other provides of your choice to get a secure ceritificate. 
+You can use any existing ceriticate, OR [Letsencrypt](https://letsencrypt.org/) which is a free service OR any other provider of your choice to get a secure ceritificate. 
 
 In this case you can just provide the path to your certificate.
 For example,
