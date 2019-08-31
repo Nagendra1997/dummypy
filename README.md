@@ -288,6 +288,14 @@ All major cloud service providers support running docker containers.Please refer
 You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
 Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
 
+## Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
+1.Check your databse host address ,hostname and other details is matching to the details you have entered in console. 
+2.  Please check you have granted the necessary permissions to access your database from your hostname address.
+3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
+4. Stop your docker container and then start it.
+
+## Getting Error: Unable to verify app token - network error in server logs
+Check your firewall configuration and verify it is configured to allow connections from your host server.Then,stop your docker container and then start it.
 
 
 
