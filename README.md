@@ -56,13 +56,18 @@ Mesibo only requires the following:
 ## Should I recompile my application to work with Mesibo On-Premise?
 Definitely not. There is no change whatsoever in the way you use Mesibo API services or how you deploy your application. The hosting infrastructure is chosen by you and can have all the data backups in your own storage.
 
+Cloud or On-Premise same service
+
 With Mesibo On-Premise ,when you connect to mesibo your connection is redirected to your chosen host/server.
 If in any case your On-Premise server has issues, then you have the option of falling back to Mesibo Cloud Services.If you wish not to connect to your On-Premise instance , you can switch back to Mesibo Cloud Services at any time.
+
+
+Preface Paragraph
 
 ## To Setup Mesibo on your premise follow these steps:
 
 ## Step 1 - Install Docker
-Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed Docker on your server, you can skip to Step 2. 
+Mesibo On-Premise server is distributed as a docker image so that you can install it on most Linux distributions without worrying about any dependencies etc. All you need is to install Docker to run it. If you have already installed and running Docker on your server, you can skip to Step 2. 
 
 You can install Docker by running the command below.
 
@@ -105,13 +110,15 @@ $ sudo docker pull mesibo/mesibo
 However, before we launch Mesibo, we need to setup mesibo configuration in the console.
 
 ## Step 3 - Configure Mesibo
+<Small Para>
+	Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details . All you need is app toke,all from console automatic, no extra config file,etc
+
 
 >Warning: Before configuring mesibo ,DO NOT turn on the Enable On-Premise switch.
 
 
 ![On Premise Off](screenshots/enable-off.jpg)
 
-Enter mesibo console → App Settings → On Premise Hosting and then enter the configuration details 
 
 Mesibo requires following configuration:
 
