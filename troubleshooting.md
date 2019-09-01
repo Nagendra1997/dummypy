@@ -47,7 +47,7 @@ I3108-082635-167: Starting mesibo
 
 You may get unexpected errors/issues during setup. Please follow the steps accordingly to resolve these issues.
 
--Getting ERROR docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock
+### Getting ERROR docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock
 
 Check if the docker daemon running. 
 Once Docker is installed, you need to start the Docker daemon. Most Linux distributions use `systemctl` to start services.If you do not have `systemctl`, use the `service` command.
@@ -74,14 +74,14 @@ This message shows that your installation appears to be working correctly.
 
 ```
 
--Getting ERROR docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+### Getting ERROR docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
 Ensure that you are running all docker commands with the prefix sudo(with security privelages)
 For example,
 ```
 sudo docker pull mesibo/mesibo
 ```
 
-- I have configured my app correctly and I am running Mesibo Container. But,my logs do not indicate anything when a user logs in.
+### I have configured my app correctly and I am running Mesibo Container. But,my logs do not indicate anything when a user logs in.
 Your server is not connected to your application. Your logs will contain an entry that says
 ```
  *** onp_message: On-Premise not enabled - login to Mesibo console to enable it
@@ -89,17 +89,16 @@ Your server is not connected to your application. Your logs will contain an entr
 Turn on the Enable On-Premise switch and your app connection should get redirected to your server immediately!
 
 
-
-- Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
+### Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
 1.Check your databse host address ,hostname and other details is matching to the details you have entered in console.
 2.  Please check you have granted the necessary permissions to access your database from your hostname address.
 3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
 4. Stop your docker container and then start it.
 
--Getting Error: Unable to verify app token - network error in server logs
+### Getting Error: Unable to verify app token - network error in server logs
 Check your firewall configuration and verify it is configured to allow connections from your host server.Then,stop your docker container and then start it.
 
-- How can I stop the docker container running Mesibo?
+### How can I stop the docker container running Mesibo?
 Get the CONTAINER_ID of the docker container you are running using
 ```
 sudo docker ps
