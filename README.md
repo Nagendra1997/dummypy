@@ -181,7 +181,6 @@ $ sudo docker run -p 5222:5222 -p 5228:5228 -p 80:80 -p 443:443 -p 4443:4443 -p 
 On sucessfull start of Mesibo ,the output log should look like below:
 
 ```
-E3108-082633-388 (1): Unable to open /proc/sys/kernel/core_pattern (truncate 1)
 E3108-082633-480 (1): Mesibo Build: Aug 29 2019 15:39:08
 E3108-082633-506 (1): PID: 1
 E3108-082633-775 (1): Local IP Address: 172.17.0.2
