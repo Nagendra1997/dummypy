@@ -340,7 +340,7 @@ You can check the logs for your server using
 ```bash
 sudo docker logs CONTAINER ID 
 ```
-When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
+When a user on your app logs in , you'll get a login entry for that user.
 
 
 
