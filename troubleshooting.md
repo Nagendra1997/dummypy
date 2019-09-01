@@ -90,9 +90,9 @@ Turn on the Enable On-Premise switch and your app connection should get redirect
 
 
 ### Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
-1.Check your databse host address ,hostname and other details is matching to the details you have entered in console.
+1. Check your databse host address ,hostname and other details is matching to the details you have entered in console.
 
-2.  Please check you have granted the necessary permissions to access your database from your hostname address.
+2. Please check you have granted the necessary permissions to access your database from your hostname address.
 
 3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
 
