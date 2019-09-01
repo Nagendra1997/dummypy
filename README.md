@@ -263,7 +263,7 @@ $ sudo ./install.sh
 You can also run your scripts in bash,Python,JavaScript,MATLAB,etc to interface your application with machine learning ,analytics and scientific computing modules.
 
 
-## Troubleshooting & FAQ
+## FAQ/Troubleshooting 
 
 For a more detailed FAQ section on On Premise [refer](https://mesibo.com/documentation/faq/)
 
@@ -272,14 +272,6 @@ As soon you enable on-premise in the console, your application will get connecte
 
 ## Can I switch connection from Mesibo On-Premise back to Mesibo Cloud Service ? 
 Yes, if you would like to completely stop connecting to your on-premise server ,stop your docker container which is running mesibo and disable On-Premise in the console .Your application will now get connected to Mesibo Cloud. 
-
-## I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
-
-You can check the logs for your server using 
-```bash
-sudo docker logs CONTAINER ID 
-```
-When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
 
 ## What happens if I have enabled on premise and my server is not running?
 Please make sure in your console that the Running status for your server is up before enabling on premise. If your server is not running and you have enabled on premise your app will not be able to connect with mesibo and your users will fail to get your service.
@@ -295,11 +287,62 @@ However,it will redirect connection to your server as soon as you enable on-prem
 
 If you would like to completely switch back to Mesibo Cloud Services and do not want to connect to your server anymore -- stop your docker container running Mesibo and turn off On-Premise switch in the console. Now,your application will get connected to Mesibo Cloud.
 
+## How can I host Mesibo on a cloud server?
+All major cloud service providers support running docker containers.Please refer to respective documentation for different providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc . For running Mesibo Docker Container follow the steps [here](https://mesibo.com)
+
+However,if you dont wish to host Mesibo On your server you can use our cloud offering.
+
+
+## On-Premise vs Cloud offering, Which one is better?
+You can't go wrong with either model. While our Cloud service lets you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is the same, however the on-premise model can work out to be more cost effective as there are no charges other than per active user charges. On the other hand, you pay for bandwidth and storage charges in our cloud offering.If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
+
 ## How can I upadate my Mesibo On-Premise docker image?
 Always ensure that you have the latest version of Mesibo Docker Image running. To update your image run
 ```bash
 sudo docker pull mesibo/mesibo
 ```
+### Getting ERROR docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock
+
+Check if the docker daemon running. 
+Once Docker is installed, you need to start the Docker daemon. Most Linux distributions use `systemctl` to start services.If you do not have `systemctl`, use the `service` command.
+
+- **`systemctl`**:
+
+  ```bash
+  $ sudo systemctl start docker
+  ```
+
+- **`service`**:
+
+  ```bash
+  $ sudo service docker start
+
+To verify that your docker daemon is running try
+```
+$ sudo docker run hello-world
+```
+which should output
+```
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+```
+
+### Getting ERROR docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+Ensure that you are running all the docker commands with the prefix sudo(with security privelages)
+For example,
+```
+sudo docker pull mesibo/mesibo
+```
+## I have enabled On-Premise and my server is running, how do I know if my app is connected to my server?
+
+You can check the logs for your server using 
+```bash
+sudo docker logs CONTAINER ID 
+```
+When a user on your app logs in , you'll get a login entry for that user. For further [troubleshooting](mesibo.com) you can use the mesibo C/C++ shared library.
+
+
 
 ## How can I stop the docker container running Mesibo?
 Get the CONTAINER_ID of the docker container you are running using
@@ -312,18 +355,9 @@ sudo docker stop <CONTAINER_ID>
 ```
 
 
-## Can I run Mesibo on a cloud service provider?
-All major cloud service providers support running docker containers.Please refer to respective documentation for different providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc . For running Mesibo Docker Container follow the steps [here](https://mesibo.com)
-
-
-
-## I am confused between On-Premise vs Cloud offering, Which one is better?
-You can't go wrong with either model. While our Cloud service let you start immediately without installing anything, the on-premise model offers ultimate flexibility, control of your data, loadable modules, interface with machine learning and AI tools and much more. The pricing is same, however on-premise model can work out more cost effective as there are no charges other than per active user charges. On other hand, you pay for bandwidth and storage charges in our cloud offering.
-Yes, definitely you have another option. If you do not wish to host mesibo on your own server you are free to use the cloud offering by Mesibo.
-
 ## Getting Error: MySQL Connection Failed -- Can't connect to MySQL server in server logs 
-1.Check your databse host address ,hostname and other details is matching to the details you have entered in console. 
-2.  Please check you have granted the necessary permissions to access your database from your hostname address.
+1. Check your databse host address ,hostname and other details is matching to the details you have entered in console. 
+2. Please check you have granted the necessary permissions to access your database from your hostname address.
 3. Check your firewall configuration and ensure that is configured properly for allowing connections from your hostname address. (You can use the tool iptables to check your firewall configuration)
 4. Stop your docker container and then start it.
 
