@@ -1,64 +1,67 @@
 
 I am currently using Mesibo Cloud services. If I enable on-premise how long will it take to switch connection to my server?: |
-As soon as you enable On-Premise in the console, your users will start getting connected to your On-Premise server. Please ensure that you have made the necessary configuration in the console and the Running Status in console displays your hostname before you enable On-Premise.
+ As soon as you enable On-Premise in the console, your users will start getting connected to your On-Premise server. Please ensure that you have made the necessary configuration in the console and the Running Status in console displays your hostname before you enable On-Premise.
 
 Can I switch from Mesibo On-Premise hosted on my service back to Mesibo Cloud Service? : | 
-Yes, if you would like your users to switch from On-Premise server to Mesibo cloud server, first disable On-Premise in the console and then stop your docker container which is running mesibo. Your users will now get connected to Mesibo Cloud
+ Yes, if you would like your users to switch from On-Premise server to Mesibo cloud server, first disable On-Premise in the console and then stop your docker container which is running mesibo. Your users will now get connected to Mesibo Cloud
 
 On-Premise vs Cloud offering, Which one is better? : |
-You can't go wrong with either model. Although our cloud services let you start immediately, there are several reasons why you need On-Premise, and one of the key reasons is to have ultimate control over your data. More than ever before, it has become imperative to protect your data and be more sensitive towards your user data, be it personal data, financial data, medical records, GDPR, HIPPA, unauthorized harvesting of your data, companies selling, misusing your data for advertisement, to name a few. 
-Mesibo On-premise offering puts you complete control of your data since everything runs on your own servers.If you do not wish to host Mesibo on your own server infrastructure, you have the option of using the Cloud offering by Mesibo. Also, even when running On-Premise, you can always use Mesibo cloud as a back-up, which gives you best of the both worlds.
+ You can't go wrong with either model. Although our cloud services let you start immediately, there are several reasons why you need On-Premise, and one of the key reasons is to have ultimate control over your data. More than ever before, it has become imperative to protect your data and be more sensitive towards your user data, be it personal data, financial data, medical records, GDPR, HIPPA, unauthorized harvesting of your data, companies selling, misusing your data for advertisement, to name a few. 
+ Mesibo On-premise offering puts you in complete control of your data since everything runs on your own servers.If you do not wish to host Mesibo on your own server infrastructure, you have the option of using the Cloud offering by Mesibo. Also, even when running On-Premise, you can always use Mesibo cloud as a back-up, which gives you best of the both worlds.
+
+What is the cost for on-premise and how billing is changed compared to Mesibo Cloud solution?: |
+ It comes to you at no additional cost - you only pay for the number of active users per month! No monthly commitment, no bandwidth charges, no storage charges, or any other hidden charges. This makes On-premise even more economical and attractive than our Cloud offering.
 
 I do not wish to host Mesibo on my server,what should I do ? : |
-If you do not wish to host Mesibo on your own server infrastructure, you have the option of using the Cloud offering by Mesibo. Also, even when running On-Premise, you can always use Mesibo cloud as a back-up, gives you best of the both worlds.
+ If you do not wish to host Mesibo on your own server infrastructure, you have the option of using the Cloud offering by Mesibo. Also, even when running On-Premise, you can always use Mesibo cloud as a back-up, gives you best of the both worlds.
 
 Should I recompile my application to run with Mesibo On-Premise ? : |
-Absolutely not! There are zero changes to the way you deploy your application or use our APIs. With Mesibo On-Premise you have greater control over your data since all call and messages are routed through your own server and you also have the added advantage of having data backed up to your own server.
+ Absolutely not! There are zero changes to the way you deploy your application or use our APIs.Mesibo cloud servers use the same software as On-Premise. So whether you use Mesibo Cloud Service or setup a dedicated server running Mesibo On-Premise, there is absolutely no change in the way you use Mesibo APIs or deploy your application. In fact, in case your data-center has issues, you can always have the option of falling back to Mesibo Cloud Services, with just the click of a button.
+
+What is Auto fallback to cloud option ? : |
+ In the configuration console for On-Premise if you enable auto fall back to cloud, Mesibo will automatically connect to cloud service ,if your dataceneter is having an issue. Note that, some of the offline messages will not be delivered in fallback mode since Mesibo cloud has no access to your database.
+
+What is do not perform network check option ? : |
+ In the configuration console for On-Premise if you enable do not perform network check ,Mesibo console will not check for the correctness of hostname, or any network connectivity. Select this if you are running Mesibo On-Premise in your private network/intranet setup.
+
+How can I configure my TLS/SSL setting ? : |
+ You can use any existing ceriticate which you maybe using with your web server, OR purchase it from any provider of your choice, OR use Letsencrypt which is a free service (recommended) to get a secure ceritificate.
+ To configure TLS/SSL certificate, you only need to provide the folder path containing your certificate (cert.pem), key (privkey.pem) and CA chain (chain.pem) files in when you run mesibo. 
+ For example,
+
+ $ sudo docker run -v /certs:/etc/letsencrypt/live/mesibo.example.com -p 5222:5222 -p 5228:5228 \
+		-p 80:80 -p 443:443 -p 4443:4443 -p 5443:5443 -p 513:513 -d mesibo/mesibo  \
+		iqmr059ms2yopxhc2sayx05ba2l5cralockbicqjsvv1nsqxs0x1yclfv0qvyg1q 
+
+
+Can I keep my database behind a firewall and run Mesibo? : |
+  Absolutely.We do not need to access your database, and hence, you may keep it behind the firewall. However, ensure that your database is accessible to Mesibo on-premise server. Refer On-Premise documentation for more details.
+
 
 What happens if I have enabled on premise and my server is not running? : |
-There are two possibilities -
+  There are two possibilities -
 - If Auto Fallback is not enabled and your server is not running and you have enabled On-Premise, your users will not be able to connect and hence will fail to get your service.
 - If Auto Fallback is enabled and your server is not running and you have enabled On-Premise, your users will switch to Mesibo cloud after a few retries
 
 
 What happens if my server disconnects due to a network issue while hosting on premise? : | 
-In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have fall back to cloud option enabled, your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
+  In the case of an issue with your on premise connection, mesibo will try to reconnect to your server for a few times. If that fails and you have fall back to cloud option enabled, your application will be connected to mesibo cloud. Otherwise mesibo will continue to reconnect to your server. Please check your server logs for further troubleshooting.
 
 What happens if I am connected to my server and disable On-Premise from console? : |
-If your server is running, your users will continue to connect to your On-Premise server since they do not know about you disabling On-Premise server.
+  If your server is running, your users will continue to connect to your On-Premise server since they do not know about you disabling On-Premise server.
 However, if you also stop your docker container running Mesibo, your users will be redirected to Mesibo cloud after a few retries and will connect there since you have disabled On-Premise.
 
-
-What is Auto fallback to cloud option ? : |
-In the configuration console for On-Premise if you enable auto fall back to cloud, Mesibo will automatically connect to cloud service ,if your dataceneter is having an issue. Note that, some of the offline messages will not be delivered in fallback mode since Mesibo cloud has no access to your database.
-
-What is do not perform network check option ? : |
-In the configuration console for On-Premise if you enable do not perform network check ,Mesibo console will not check for the correctness of hostname, or any network connectivity. Select this if you are running Mesibo On-Premise in your private network/intranet setup.
-
-How can I configure my TLS/SSL setting ? : |
-If you have a valid SSL certificate just provide the path to the certificate in your configuration. You can get your certificate using a service such as letsencrypt.org OR any other provider.
-
-Can I keep my database behind a firewall and run Mesibo? : |
-Absolutely.We do not need to access your database, and hence, you may keep it behind the firewall. However, ensure that your database is accessible to Mesibo on-premise server. Refer On-Premise documentation for more details.
-
 Can I run Mesibo on a cloud service provider? : |
-All major cloud service providers support running docker containers.Please refer to respective documentation for different providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc . For running Mesibo Docker Container follow the steps [here](https://mesibo.com)
+  All major cloud service providers support running docker containers.Please refer to respective documentation for different providers such as [AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers/), [ Azure](https://azure.microsoft.com/en-us/services/container-instances/), [Google Cloud](https://cloud.google.com/run/docs/deploying),etc . For running Mesibo Docker Container follow the steps [here](https://mesibo.com)
 
-If I do not wish to use On Premise what kind of cloud service does Mesibo Offer : |
+If I do not wish to use Mesibo On Premise what kind of cloud service does Mesibo Offer : |
   Mesibo is built on a highly resilient globally distributed platform spread across three core sites, Asia, Europe, and the United States. These core sites are supported by local relay agents.  All the core sites run hot-swappable servers with enterprise-grade Linux on latest Intel Xeon processors, to perform a variety of tasks like message routing, call processing, relay agents.
 
-Will Mesibo also provide the necessary security requirements for on-premise?: |
-  You are free to configure your network security as per your needs,independently as  Mesibo On-Premise allows all the data to be stored on your own server and all messages and calls are routed through your infrastructure. 
 
-What is the cost for on-premise and how billing is changed compared to Mesibo Cloud solution?: |
-  It comes to you at no additional cost - you only pay for the number of active users per month! No monthly commitment, no bandwidth charges, no storage charges, or any other hidden charges. This makes On-premise even more economical and attractive than our Cloud offering.
-
-
-
-Where are your servers located?: |
+Where are your Cloud Servers located?: |
  Our servers are located in the EU, US, and Asia. Users will be automatically connected to the nearest location. However, if you require that your users connect through a certain region only, for example, EU, it can be set up.Also, with Mesibo On-Premise Offering you can set up your server anywhere you want and run Mesibo On it.
 
-Due to GDPR, can you guarantee that the location of the server is in the EU?: |
+Due to GDPR, can you guarantee that the location of the Cloud Server is in the EU?: |
   Yes, we can offer you servers located in Germany.You can also use the Mesibo On-Premise offering to host your server at any location and run Mesibo on it. 
 
 
